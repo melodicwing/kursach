@@ -1,0 +1,287 @@
+/* colors */
+/* red #b30000 */
+/* bs-red #e45335 */
+/* gold #FFD700 */
+
+
+/* globals */
+
+body {
+	background-color: #F5DEB3;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	font-family: fantasy;
+}
+
+
+/* logo */
+
+.jumbotron.logo {
+	background-color: #b30000;
+}
+
+p.logo {
+	text-align: center;
+}
+
+h1.logo {
+	color: #FFD700;
+	text-align: center;
+	margin-top: 11px;
+}
+
+
+/* navabar */
+
+ul.nav li.dropdown:hover ul.dropdown-menu {
+	display: block;
+}
+
+ul.dropdown-menu a {
+	color: #b30000 !important;
+}
+
+ul.dropdown-menu a:hover {
+	color: #FFD700 !important;
+	background-color: #b30000 !important;
+}
+
+ul.nav.navbar-nav a {
+	padding-top: 10px;
+	padding-bottom: 10px;
+	color: #FFD700;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+ul.nav.navbar-nav a:hover {
+	color: #FFD700;
+}
+
+.navbar {
+	min-height: 0;
+	background-color: #b30000;
+	border-color: #b30000;
+	margin-bottom: 11px;
+}
+
+.my__navbar__div {
+	padding: 0;
+}
+
+.dropdown-menu {
+	z-index: 10000;
+}
+
+.navbar-nav,
+.navbar-header,
+.navbar-collapse
+{
+	margin: 0 !important;
+}
+
+.navbar-toggle {
+	margin: 10px;
+}
+
+
+/* breadcrumbs */
+
+.breadcrumb {
+	margin-bottom: 0;
+	background-color: inherit;
+	padding-left: 5px;
+}
+
+.breadcrumb>li+li:before {
+	color: black;
+}
+
+
+/* slider */
+
+.slider__dummy {
+	width: 1200px;
+	height: 300px;
+	background-color: white;
+}
+
+.bxslider {
+	margin: 0;
+}
+
+.bx-wrapper ul li {
+	display: flex;
+    /* flex-direction: column;*/
+    align-items: center; 
+    /* justify-content: center;*/
+
+	height: 300px;
+}
+
+.bx-wrapper .bx-caption {
+	bottom: 10px !important;
+}
+
+.bx-wrapper img {
+	width: 100%;
+}
+
+
+/* footer */
+.jumbotron.footer {
+	margin-top: 20px;
+	background-color: #b30000;
+}
+
+
+/* my__form */
+input[type="submit"].my__form {
+	background-color: #e45335;
+	color: #fff;
+}
+
+
+/* etc */
+
+.spacer10 {
+	margin-top: 10px;
+}
+
+.spacer {
+	margin-top: 20px;
+}
+
+.spacer30 {
+	margin-top: 30px;
+}
+
+.spacer40 {
+	margin-top: 40px;
+}
+
+.nav-pills a:hover{
+	background-color: #e45335 !important;
+	color:white;
+}
+
+address {
+	margin-bottom: 0;
+}
+
+a:focus {
+	outline:none;
+	text-decoration: none;
+}
+
+.navbar-inverse .navbar-toggle:hover, .navbar-inverse .navbar-toggle:focus {
+	background-color: transparent;
+}
+
+/* about.html */
+
+.about__header__block {
+	margin-top: 0px;
+	padding: 10px 10px 10px 10px;
+	background-color: #e45335;
+	font-family: inherit;
+	color: #fff;
+	/*background-color: #e00000;*/
+}
+
+.about__header__block:hover {
+	font-family: fantasy;
+	padding: 6px 10px 6px 10px;
+	background-color: #b30000;
+	color: #FFD700 !important;
+	font-size: 28px;
+}
+
+.about__header__link {
+	color: #FFD700;
+}
+
+.about__header__link:hover {
+	text-decoration: none;
+}
+
+.about__img {
+	width: 100%;
+}
+
+
+/* about_network.html */
+
+.about__network__header__block {
+	margin-top: 0px;
+	padding: 10px 10px 10px 10px;
+	background-color: #e45335;
+	font-family: inherit;
+	color: #fff;
+	/*background-color: #e00000;*/
+}
+
+
+/* about_guestbook.html*/
+.guestbook__frame {
+	padding: 0px 10px;
+}
+
+
+/* menu.html */
+/*
+#menu__navlist {
+	padding: 0px 15px;
+	text-align: center;
+}
+
+#menu__navlist li.list__item {
+	display: inline;
+	list-style-type: none;
+}
+
+#menu__navlist li.list__spacer {
+	display: inline;
+	list-style-type: none;
+	margin-right: 20px;
+}
+*/
+
+.mymenu .nav-tabs.nav-justified {
+	padding: 0px 15px;
+}
+
+.mymenu .nav-tabs>li>a {
+	font-weight: bold;
+}
+
+.mymenu .nav-tabs>li>a:hover {
+	color: #fff;
+	border-color: transparent;
+	background-color: #e45335;
+}
+
+.mymenu .nav-tabs>li.active>a,
+.mymenu .nav-tabs>li.active>a:hover,
+.mymenu .nav-tabs>li.active>a:focus {
+	color: #FFD700;
+	background-color: #e45335;
+	border-color: #e45335;
+}
+
+@media (min-width: 768px) {
+	.mymenu .nav-tabs.nav-justified>li.active>a {
+		border-bottom-color: #e45335 !important;
+	}
+
+	.mymenu .nav-tabs.nav-justified>li>a {
+		border-bottom-color: #e45335 !important;
+	}
+}
+
+
+/* colors */
+/* red #b30000 */
+/* bs-red #e45335 */
+/* gold #FFD700 */

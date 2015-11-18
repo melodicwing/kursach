@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+
+		<script src='/assets/js/jquery-2.1.4.js'></script>
+
+		<link href='/assets/css/bootstrap/css/bootstrap.min.css' rel='stylesheet'>
+		<script src='/assets/css/bootstrap/js/bootstrap.min.js'></script>
+
+		<link href='/assets/css/mystyle.css' rel='stylesheet'>
+	</head>
+	<body>
+		<div class="container">
+
+			<div class="jumbotron logo">
+				<h1 class='logo'>Кушай!</h1>
+				<p class='logo'>наша еда лучше, чем название</p>
+			</div>
+			
+			<nav class="navbar navbar-inverse">
+				<div class="container-fluid my__navbar__div">
+				    <div class="navbar-header">
+				      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+				        <span class="icon-bar"></span>
+				        <span class="icon-bar"></span>
+				        <span class="icon-bar"></span> 
+				      </button>
+				    </div>
+				    <div class="collapse navbar-collapse my__navbar__div" id="myNavbar">
+						<ul class="nav navbar-nav">
+							<li><a href="index.html">Главная страница</a></li>
+							<li><a href="news.html">Новости</a></li>
+							<li class="dropdown">
+								<a href="about.html">О нас<span class="caret"></span></a>
+								<ul class="dropdown-menu">
+									<li><a href="about_network.html">Сеть ресторанов</a></li>
+									<li><a href="about_service.html">Обслуживание</a></li>
+									<li><a href="about_contacts.html">Контакты</a></li>
+									<li><a href="about_rewards.html">Награды</a></li>
+									<li><a href="about_staff.html">Персонал</a></li>
+									<li><a href="about_guestbook.html">Отзывы</a></li>
+								</ul>
+							</li>
+							<li><a href="/study">Меню</a></li>
+							<li class='dropdown'>
+								<a class="dropdown-toggle" data-toggle="dropdown" href="#">Заказ
+								<span class="caret"></span></a>
+								<ul class="dropdown-menu">
+									<li><a href="#">Заказ столика</a></li>
+									<li><a href="#">Заказ мероприятия</a></li>
+								</ul>
+							</li>
+							<li><a href="/map">Схема проезда</a></li>
+							<li><a href="/guestbook">Карта сайта</a></li>
+						</ul>
+				    </div>
+				  </div>
+			</nav>
+			
+			<div class='breadcrumbs'>
+				<ul class="breadcrumb">
+					<li><a href='index.html'>Главная</a></li>
+					<li><a href='about.html'>О нас</a></li>
+					<li class='active'>Отзывы</li>
+				</ul>
+			</div>
+		</div>
+
+		<div class='container spacer'>
+			<div class='row'>
+				<div class='col-sm-offset-3 col-xs-12 col-sm-6'>
+					<form>
+						<div class='form-group'>
+							<label for='inputName'>Ваше имя:</label>
+							<input id='inputName' type='text' class='form-control'>
+						</div>
+						<div class='form-group'>
+							<label for='inputText'>Ваш отзыв:</label>
+							<textarea id='inputText' class='form-control' rows=5></textarea>
+						</div>
+						<div class='form-group'>
+							<input id='inputSubmit' type='submit' class='form-control my__form' value='Отправить'>
+						</div>
+					</form>
+				</div>
+			</div>
+
+			<div class='row'>
+				<div class='col-xs-12 spacer'>
+				</div>
+			</div>
+			<div class='row'>
+				<div class='col-sm-4'>
+					<h4 class='about__network__header__block'>Брюс Уэйн, 15.11.2015</h4>
+
+					<div class='guestbook__frame'>
+						<p>Ем манную кашку каждое утро в этом заведении, и только её, только здесь похудел на пару десятков фунтов за три недели, и это я ещё и за маму и за папу по ложечке съёдал сверху!</p>
+					</div>
+
+					<div class='hidden-xs spacer10'>
+						&nbsp
+					</div>
+				</div>
+				<div class='visible-xs-block spacer10'>
+					&nbsp
+				</div>
+				<div class='col-sm-4'>
+					<h4 class='about__network__header__block'>Андрей Журавлёв, 26.07.2015</h4>
+
+					<div class='guestbook__frame'>
+						<p>Суши здесь просто бомбические, не оторваться, не отказаться, не почесаться. Третьи сутки сижу тут и ем их, и знаете, мне даже васаби не всрался.</p>
+					</div>
+
+					<div class='hidden-xs spacer10'>
+						&nbsp
+					</div>
+				</div>
+				<div class='visible-xs-block spacer10'>
+					&nbsp
+				</div>
+				<div class='col-sm-4'>
+					<h4 class='about__network__header__block'>Твиттерский, 01.06.2015</h4>
+
+					<div class='guestbook__frame'>
+						<p>Всего 140 рублей за комплексный обед и ещё вай-фай бесплатный, не будь у меня дома, я бы поселился в холле этого заведения, и завёл бы себе инстаграм, чтобы постить фотки прекрасной еды, что они тут готовят.</p>
+					</div>
+
+					<div class='hidden-xs spacer10'>
+						&nbsp
+					</div>
+				</div>
+			</div>
+			<div class='row'>
+				<div class='visible-xs-block spacer10'>
+					&nbsp
+				</div>
+				<div class='col-sm-4'>
+					<h4 class='about__network__header__block'>Дуэйн Скала Джонсон, 23.04.2015</h4>
+
+					<div class='guestbook__frame'>
+						<p>знаете, меня все (почему-то) называют "Скалой", а я зову скалой ЭТОТ РЕСТОРАН. Терпение у персонала крепко как СКАЛА, посуда крепка как СКАЛА, даже цветы в горшочках крепки как СКАЛА. Приятного вам СКАЛАППЕТИТА.</p>
+					</div>
+
+					<div class='hidden-xs spacer10'>
+						&nbsp
+					</div>
+				</div>
+				<div class='visible-xs-block spacer10'>
+					&nbsp
+				</div>
+				<div class='col-sm-4'>
+					<h4 class='about__network__header__block'>Гарри Поттер, 31.07.2014</h4>
+
+					<div class='guestbook__frame'>
+						<p>Знаете, я навернул кучу тортиков в этом заведении в своё 34-летие, и моё волшебство ещё никогда не было таким волшебным. Они даже украсили всю выпечку маленькими снитчами из сахарно-песочного теста, я их конечно же слопал, после чего вингардиум-левиосса начала массово происходить повсюду.</p>
+					</div>
+
+					<div class='hidden-xs spacer10'>
+						&nbsp
+					</div>
+				</div>
+				<div class='visible-xs-block spacer10'>
+					&nbsp
+				</div>
+				<div class='col-sm-4'>
+					<h4 class='about__network__header__block'>Джон CHAMP Сина (ударение на И), THIS SUNDAY NIGHT</h4>
+
+					<div class='guestbook__frame'>
+						<p>Вы готовы? Готовы ли вы? А? ДВАЖДЫ ЧЕМПИОН В WWE ДЖОН СИНА СОВЕТУЕТ ВАМ ЭТОТ РЕСТОРАН. ЕСЛИ СКАЖЕТЕ ЧТО ВЫ ОТ МЕНЯ, ТО МОЖНО БУДЕТ СЪЕСТЬ ПОЛЕЗНЫЙ МЮСЛИ ЗАВТРАК ВСЕГО ЗА ФИФТИНАЙН НАЙНТИНАЙН.</p>
+					</div>
+
+					<div class='hidden-xs spacer10'>
+						&nbsp
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class='container'>
+			<div class='jumbotron footer'>
+				<p style='text-align:center'>&copy Лось Д.А.</p>
+				<p style='text-align:center; margin-bottom:0'>2015</p>
+			</div>
+		</div>
+	</body>
+</html>
