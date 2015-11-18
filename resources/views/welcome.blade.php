@@ -38,8 +38,7 @@
     <body>
         <div class="container">
             <div class="content">
-                <div class="title">Laravel 5</div>
-                <div class="title">Костя пидор с:</div>
+                <div class="title">Kostya pidor C:</div>
             </div>
         </div>
     </body>
