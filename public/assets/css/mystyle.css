@@ -34,12 +34,24 @@ h1.logo {
 
 /* navabar */
 
-ul.nav li.dropdown:hover ul.dropdown-menu {
-	display: block;
+ul.dropdown-menu a {
+	color: #fff !important;
 }
 
-ul.dropdown-menu a {
-	color: #b30000 !important;
+.navbar-inverse .navbar-nav > .open > a,
+.navbar-inverse .navbar-nav > .open > a:hover,
+.navbar-inverse .navbar-nav > .open > a:focus {
+	color: #FFD700 !important;
+}
+
+@media (min-width: 768px) {
+	ul.nav li.dropdown:hover ul.dropdown-menu {
+		display: block;
+	}
+
+	ul.dropdown-menu a {
+		color: #b30000 !important;
+	}
 }
 
 ul.dropdown-menu a:hover {
