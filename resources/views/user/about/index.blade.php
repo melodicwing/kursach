@@ -1,14 +1,14 @@
 @extends('user/template')
 
-@section('title')
-	О нас
-@endsection
+@section('title', 'О нас')
+
+@section('breadcrumbs', Breadcrumbs::render('about'))
 
 @section('content')
 	<div class='row'>
 		<div class="col-sm-2">
 			<ul class="nav nav-pills nav-stacked">
-				<li class="active"><a href="about.html">О нас</a></li>
+				<li class="active"><a href="/about">О нас</a></li>
 				<li><a href="about_network.html">Сеть ресторанов</a></li>
 				<li><a href="about_service.html">Обслуживание</a></li>
 				<li><a href="about_contacts.html">Контакты</a></li>
@@ -40,7 +40,7 @@
 				</div>
 
 				<div class='col-lg-12 spacer40'>
-					<a class='about__header__link' href='about_service.html'><h4 class='about__header__block'>Обслуживание</h4></a>
+					<a class='about__header__link' href='/about/service'><h4 class='about__header__block'>Обслуживание</h4></a>
 						<div class='row'>
 							<div class='col-sm-3 col-xs-12'>
 								<img class='about__img' src='/assets/img/table-settings-873232_1920.jpg'>

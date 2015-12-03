@@ -25,4 +25,9 @@ class User extends Controller
 	{
 		return view('user/about/network');
 	}
+
+	function about_service()
+	{
+		return view('user/about/service');
+	}
 }

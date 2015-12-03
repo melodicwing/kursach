@@ -1,8 +1,8 @@
 @extends('user/template')
 
-@section('title')
-	Новости
-@endsection
+@section('title', 'Новости')
+
+@section('breadcrumbs', Breadcrumbs::render('news'))
 
 @section('content')
 	<div class='row'>

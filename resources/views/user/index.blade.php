@@ -1,8 +1,8 @@
 @extends('user/template')
 
-@section('title')
-	Кушай!
-@endsection
+@section('title', 'Кушай!')
+
+@section('breadcrumbs', Breadcrumbs::render('home'))
 
 @section('content')
 	<!-- Слайдер -->

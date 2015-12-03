@@ -1,8 +1,8 @@
 @extends('user/template')
 
-@section('title')
-	Кушай!
-@endsection
+@section('title', 'О нас / Сеть ресторанов')
+
+@section('breadcrumbs', Breadcrumbs::render('about/network'))
 
 @section('content')
 	<div class='row'>

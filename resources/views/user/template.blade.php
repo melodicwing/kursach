@@ -28,11 +28,11 @@
 								<a class="dropdown-toggle disabled" data-toggle="dropdown" href="/about">О нас<span class="caret"></span></a>
 								<ul class="dropdown-menu">
 									<li><a href="/about/network">Сеть ресторанов</a></li>
-									<li><a href="about_service.html">Обслуживание</a></li>
-									<li><a href="about_contacts.html">Контакты</a></li>
-									<li><a href="about_rewards.html">Награды</a></li>
-									<li><a href="about_staff.html">Персонал</a></li>
-									<li><a href="about_guestbook.html">Отзывы</a></li>
+									<li><a href="/about/service">Обслуживание</a></li>
+									<li><a href="/about/contacts">Контакты</a></li>
+									<li><a href="/about/rewards">Награды</a></li>
+									<li><a href="/about/staff">Персонал</a></li>
+									<li><a href="/about/guestbook">Отзывы</a></li>
 								</ul>
 							</li>
 							<li><a href="/study">Меню</a></li>
@@ -51,13 +51,14 @@
 				  </div>
 			</nav>
 			
-			<div class='breadcrumbs'>
+			<!-- <div class='breadcrumbs'>
 				<ul class="breadcrumb">
 					<li><a href='index.html'>Главная</a></li>
 					<li><a href='about.html'>О нас</a></li>
 					<li class='active'>Отзывы</li>
 				</ul>
-			</div>
+			</div> -->
+			@yield('breadcrumbs')
 		</div>
 
 		<div class='container spacer'>
