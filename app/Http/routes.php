@@ -11,6 +11,13 @@
 |
 */
 
-Route::get('/', function () {
+Route::get('welcome', function () {
     return view('welcome');
+});
+
+Route::get('/', 'User@index');
+Route::get('/news', 'User@news');
+Route::group(['prefix' => 'about'], function(){
+	Route::get('/', 'User@about');
+	Route::get('/network', 'User@about_network');
 });
