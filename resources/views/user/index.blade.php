@@ -2,9 +2,11 @@
 
 @section('title', 'Кушай!')
 
-@section('breadcrumbs', Breadcrumbs::render('home'))
+@section('breadcrumbs', Breadcrumbs::render(\App::getLocale().'_home'))
 
 @section('content')
+{{\App::getLocale().'_home'}}
+{{link_loc().'_home'}}
 	<!-- Слайдер -->
 	<script src="/assets/js/bxslider/jquery.bxslider.min.js"></script>
 	<link href="/assets/js/bxslider/jquery.bxslider.css" rel="stylesheet" />

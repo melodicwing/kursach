@@ -18,6 +18,7 @@ class User extends Controller
 
 	function about()
 	{
+		echo \App::getLocale();
 		return view('user/about/index');
 	}
 

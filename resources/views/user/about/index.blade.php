@@ -9,12 +9,12 @@
 		<div class="col-sm-2">
 			<ul class="nav nav-pills nav-stacked">
 				<li class="active"><a href="/about">О нас</a></li>
-				<li><a href="about_network.html">Сеть ресторанов</a></li>
-				<li><a href="about_service.html">Обслуживание</a></li>
-				<li><a href="about_contacts.html">Контакты</a></li>
-				<li><a href="about_rewards.html">Награды</a></li>
-				<li><a href="about_staff.html">Персонал</a></li>
-				<li><a href="about_guestbook.html">Отзывы</a></li>
+				<li><a href="/about/network">Сеть ресторанов</a></li>
+				<li><a href="/about/service">Обслуживание</a></li>
+				<li><a href="/about/contacts">Контакты</a></li>
+				<li><a href="/about/rewards">Награды</a></li>
+				<li><a href="/about/staff">Персонал</a></li>
+				<li><a href="/about/guestbook">Отзывы</a></li>
 			</ul>
 		</div>
 

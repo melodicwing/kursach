@@ -22,20 +22,20 @@
 				    </div>
 				    <div class="collapse navbar-collapse my__navbar__div" id="myNavbar">
 						<ul class="nav navbar-nav">
-							<li><a href="/">Главная страница</a></li>
-							<li><a href="/news">Новости</a></li>
+							<li><a href="{{link_loc()}}/">Главная страница</a></li>
+							<li><a href="{{link_loc()}}/news">Новости</a></li>
 							<li class="dropdown">
 								<a class="dropdown-toggle disabled" data-toggle="dropdown" href="/about">О нас<span class="caret"></span></a>
 								<ul class="dropdown-menu">
-									<li><a href="/about/network">Сеть ресторанов</a></li>
-									<li><a href="/about/service">Обслуживание</a></li>
-									<li><a href="/about/contacts">Контакты</a></li>
-									<li><a href="/about/rewards">Награды</a></li>
-									<li><a href="/about/staff">Персонал</a></li>
-									<li><a href="/about/guestbook">Отзывы</a></li>
+									<li><a href="{{link_loc()}}/about/network">Сеть ресторанов</a></li>
+									<li><a href="{{link_loc()}}/about/service">Обслуживание</a></li>
+									<li><a href="{{link_loc()}}/about/contacts">Контакты</a></li>
+									<li><a href="{{link_loc()}}/about/rewards">Награды</a></li>
+									<li><a href="{{link_loc()}}/about/staff">Персонал</a></li>
+									<li><a href="{{link_loc()}}/about/guestbook">Отзывы</a></li>
 								</ul>
 							</li>
-							<li><a href="/study">Меню</a></li>
+							<li><a href="{{link_loc()}}/menu">Меню</a></li>
 							<li class='dropdown'>
 								<a class="dropdown-toggle" data-toggle="dropdown" href="#">Заказ
 								<span class="caret"></span></a>
