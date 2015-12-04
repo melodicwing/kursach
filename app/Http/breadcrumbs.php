@@ -36,6 +36,30 @@ foreach ($locales as $item) {
 			$breadcrumbs->parent($lang.'about/');
 			$breadcrumbs->push(trans('user/template.service'), route($lang.'about/service'));
 		});
+
+		//О нас / Контакты
+		Breadcrumbs::register($lang.'about/contacts', function($breadcrumbs) use ($lang){
+			$breadcrumbs->parent($lang.'about/');
+			$breadcrumbs->push(trans('user/template.contacts'), route($lang.'about/contacts'));
+		});
+
+		//О нас / Награды
+		Breadcrumbs::register($lang.'about/rewards', function($breadcrumbs) use ($lang){
+			$breadcrumbs->parent($lang.'about/');
+			$breadcrumbs->push(trans('user/template.rewards'), route($lang.'about/rewards'));
+		});
+
+		//О нас / Персонал
+		Breadcrumbs::register($lang.'about/staff', function($breadcrumbs) use ($lang){
+			$breadcrumbs->parent($lang.'about/');
+			$breadcrumbs->push(trans('user/template.staff'), route($lang.'about/staff'));
+		});
+
+		//О нас / Отзывы
+		Breadcrumbs::register($lang.'about/guestbook', function($breadcrumbs) use ($lang){
+			$breadcrumbs->parent($lang.'about/');
+			$breadcrumbs->push(trans('user/template.guestbook'), route($lang.'about/guestbook'));
+		});
 }
 
 // //Главная

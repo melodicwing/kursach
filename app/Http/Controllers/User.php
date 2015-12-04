@@ -30,4 +30,24 @@ class User extends Controller
 	{
 		return view('user/about/service');
 	}
+
+	function about_contacts()
+	{
+		return view('user/about/contacts');
+	}
+
+	function about_rewards()
+	{
+		return view('user/about/rewards');
+	}
+
+	function about_staff()
+	{
+		return view('user/about/staff');
+	}
+
+	function about_guestbook()
+	{
+		return view('user/about/guestbook');
+	}
 }
