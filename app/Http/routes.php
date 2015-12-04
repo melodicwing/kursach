@@ -45,16 +45,17 @@ foreach ($locales as $item) {
 
 	Route::group(['prefix' => $item, 'as' => $lang], function(){
 		Route::get('/', 'User@index')->name('home');
-		Route::get('/news', 'User@news')->name('news');
-		Route::group(['prefix' => 'about', 'as' => 'about/'], function(){
-			Route::get('/', 'User@about')->name('');
-			Route::get('/network', 'User@about_network')->name('network');
-			Route::get('/service', 'User@about_service')->name('service');
-			Route::get('/contacts', 'User@about_contacts')->name('contacts');
-			Route::get('/rewards', 'User@about_rewards')->name('rewards');
-			Route::get('/staff', 'User@about_staff')->name('staff');
-			Route::get('/guestbook', 'User@about_guestbook')->name('guestbook');
-		});
+			Route::get('/news', 'User@news')->name('news');
+			Route::group(['prefix' => 'about', 'as' => 'about/'], function(){
+				Route::get('/', 'User@about')->name('');
+				Route::get('/network', 'User@about_network')->name('network');
+				Route::get('/service', 'User@about_service')->name('service');
+				Route::get('/contacts', 'User@about_contacts')->name('contacts');
+				Route::get('/rewards', 'User@about_rewards')->name('rewards');
+				Route::get('/staff', 'User@about_staff')->name('staff');
+				Route::get('/guestbook', 'User@about_guestbook')->name('guestbook');
+			});
+			Route::get('/menu', 'User@menu')->name('menu');
 	});
 }
 

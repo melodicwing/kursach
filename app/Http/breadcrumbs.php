@@ -60,6 +60,12 @@ foreach ($locales as $item) {
 			$breadcrumbs->parent($lang.'about/');
 			$breadcrumbs->push(trans('user/template.guestbook'), route($lang.'about/guestbook'));
 		});
+
+	//Меню
+	Breadcrumbs::register($lang.'menu', function($breadcrumbs) use ($lang){
+		$breadcrumbs->parent($lang.'home');
+		$breadcrumbs->push(trans('user/template.menu'), route($lang.'menu'));
+	});
 }
 
 // //Главная
