@@ -31,6 +31,15 @@ h1.logo {
 	margin-top: 11px;
 }
 
+p.lang__switch {
+	text-align: right;
+	margin-bottom: -30px;
+}
+
+p.lang__switch a{
+	color: #FFD700;
+}
+
 
 /* navabar */
 

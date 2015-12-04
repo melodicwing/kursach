@@ -1,3 +1,4 @@
+<!-- {{ \App::getLocale() }} -->
 <!DOCTYPE html>
 <html>
 	<head>
@@ -7,7 +8,9 @@
 		<div class="container">
 
 			<div class="jumbotron logo">
-				<p> lang</p>
+				<p class='lang__switch'>
+					{!! print_lang_switch() !!}
+				</p>
 				<h1 class='logo'>Кушай!</h1>
 				<p class='logo'>наша еда лучше, чем название</p>
 			</div>

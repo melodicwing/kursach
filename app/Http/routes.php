@@ -11,6 +11,10 @@
 |
 */
 
+Route::get('sas', function(){
+	return Request::path();
+});
+
 Route::get('test', function(){
 	return config('app.locale');
 });

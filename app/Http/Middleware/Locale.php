@@ -18,12 +18,12 @@ class Locale
 	{
 		// var_dump(explode('/', $request->path()));
 		$parts = explode('/', $request->path());
-		// if ( $parts[0] == 'en' ) {
-		// 	\App::setLocale('en');
-		// }
-		if ($parts[0]) {
+		if ( in_array($parts[0], get_langs())) {
 			\App::setLocale($parts[0]);
 		}
+		// if ($parts[0]) {
+		// 	\App::setLocale($parts[0]);
+		// }
 		return $next($request);
 	}
 }
