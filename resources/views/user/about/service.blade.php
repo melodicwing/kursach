@@ -1,11 +1,11 @@
 @extends('user/template')
 
-@section('title', 'О нас / Обслуживание')
+@section('title', trans('user/template.service'))
 
 @section('content')
 	<div class='row'>
 				<div class='col-xs-12'>
-					<p>У нас ОЧЕНЬ классно! Ну просто нереально круто. Настолько здорово, что нам не стыдно рядом с этими словами прикрепить картинку кроликов.</p>
+					<p>{{ trans('user/about/service.msg') }}</p>
 					<img class='about__img' src='/assets/img/kroliki.jpg'>
 				</div>
 			</div>

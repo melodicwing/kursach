@@ -1,8 +1,6 @@
 @extends('user/template')
 
-@section('title', 'О нас / Сеть ресторанов')
-
-@section('breadcrumbs', Breadcrumbs::render())
+@section('title', trans('user/template.network'))
 
 @section('content')
 	<div class='row'>
@@ -18,7 +16,7 @@
 				1355 Market Street, Suite 900<br>
 				San Francisco, CA 94103<br>
 				<abbr title="Phone">P:</abbr> (123) 456-7890<br>
-				<a href='https://maps.yandex.ru'>Посмотреть на карте</a>
+				<a href='https://maps.yandex.ru'>{{ trans('user/about/network.watch_on_map') }}</a>
 			</address>
 
 			<div class='hidden-xs spacer10'>
@@ -40,7 +38,7 @@
 				1355 Market Street, Suite 900<br>
 				San Francisco, CA 94103<br>
 				<abbr title="Phone">P:</abbr> (123) 456-7890<br>
-				<a href='https://maps.yandex.ru'>Посмотреть на карте</a>
+				<a href='https://maps.yandex.ru'>{{ trans('user/about/network.watch_on_map') }}</a>
 			</address>
 
 			<div class='hidden-xs spacer10'>
@@ -62,7 +60,7 @@
 				1355 Market Street, Suite 900<br>
 				San Francisco, CA 94103<br>
 				<abbr title="Phone">P:</abbr> (123) 456-7890<br>
-				<a href='https://maps.yandex.ru'>Посмотреть на карте</a>
+				<a href='https://maps.yandex.ru'>{{ trans('user/about/network.watch_on_map') }}</a>
 			</address>
 
 			<div class='hidden-xs spacer10'>
@@ -86,7 +84,7 @@
 				1355 Market Street, Suite 900<br>
 				San Francisco, CA 94103<br>
 				<abbr title="Phone">P:</abbr> (123) 456-7890<br>
-				<a href='https://maps.yandex.ru'>Посмотреть на карте</a>
+				<a href='https://maps.yandex.ru'>{{ trans('user/about/network.watch_on_map') }}</a>
 			</address>
 
 			<div class='hidden-xs spacer10'>
@@ -108,7 +106,7 @@
 				1355 Market Street, Suite 900<br>
 				San Francisco, CA 94103<br>
 				<abbr title="Phone">P:</abbr> (123) 456-7890<br>
-				<a href='https://maps.yandex.ru'>Посмотреть на карте</a>
+				<a href='https://maps.yandex.ru'>{{ trans('user/about/network.watch_on_map') }}</a>
 			</address>
 
 			<div class='hidden-xs spacer10'>
@@ -130,7 +128,7 @@
 				1355 Market Street, Suite 900<br>
 				San Francisco, CA 94103<br>
 				<abbr title="Phone">P:</abbr> (123) 456-7890<br>
-				<a href='https://maps.yandex.ru'>Посмотреть на карте</a>
+				<a href='https://maps.yandex.ru'>{{ trans('user/about/network.watch_on_map') }}</a>
 			</address>
 
 			<div class='hidden-xs spacer10'>

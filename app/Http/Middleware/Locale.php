@@ -16,9 +16,10 @@ class Locale
 	 */
 	public function handle($request, Closure $next)
 	{
-		// var_dump(explode('/', $request->path()));
 		$parts = explode('/', $request->path());
-		if ( in_array($parts[0], get_langs())) {
+		// var_dump($parts);
+		// echo $request->path();
+		if ( in_array($parts[0], get_langs()) && $request->path() != '/' ) {
 			\App::setLocale($parts[0]);
 		}
 		// if ($parts[0]) {

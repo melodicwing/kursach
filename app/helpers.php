@@ -28,6 +28,11 @@ function lang_switch_url($lang)
 			$parts[0] = $lang;
 			return '/'.implode('/', $parts);
 		} else {
+			foreach ($parts as $key => $value) {
+				if ( $value == '' ) {
+					unset($parts[$key]);
+				}
+			}
 			return '/'.$lang.'/'.implode('/', $parts);
 		}
 	}

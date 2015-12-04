@@ -1,13 +1,13 @@
 @extends('user/template')
 
-@section('title', 'Новости')
+@section('title', trans('user/template.news'))
 
 @section('content')
 	<div class='row'>
 		<div class='col-sm-3 hidden-xs'>
 		</div>
 		<div class='col-xs-6'>
-			<h2>Новости:</h2>
+			<h2>{{ trans('user/news.news') }}</h2>
 		</div>
 	</div>
 

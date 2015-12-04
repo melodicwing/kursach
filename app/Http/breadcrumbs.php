@@ -10,31 +10,31 @@ foreach ($locales as $item) {
 	}
 	//Главная
 	Breadcrumbs::register($lang.'home', function($breadcrumbs) use ($lang){
-		$breadcrumbs->push($lang.'Главная', route($lang.'home'));
+		$breadcrumbs->push(trans('user/template.home'), route($lang.'home'));
 	});
 
 	//Новости
 	Breadcrumbs::register($lang.'news', function($breadcrumbs) use ($lang){
 		$breadcrumbs->parent($lang.'home');
-		$breadcrumbs->push($lang.'Новости', route($lang.'news'));
+		$breadcrumbs->push(trans('user/template.news'), route($lang.'news'));
 	});
 
 	//О нас
 	Breadcrumbs::register($lang.'about/', function($breadcrumbs) use ($lang){
 		$breadcrumbs->parent($lang.'home');
-		$breadcrumbs->push($lang.'О нас', route($lang.'about/'));
+		$breadcrumbs->push(trans('user/template.about'), route($lang.'about/'));
 	});
 
 		//О нас / Сеть ресторанов
 		Breadcrumbs::register($lang.'about/network', function($breadcrumbs) use ($lang){
 			$breadcrumbs->parent($lang.'about/');
-			$breadcrumbs->push($lang.'Сеть ресторанов', route($lang.'about/network'));
+			$breadcrumbs->push(trans('user/template.network'), route($lang.'about/network'));
 		});
 
 		//О нас / Обслуживание
 		Breadcrumbs::register($lang.'about/service', function($breadcrumbs) use ($lang){
 			$breadcrumbs->parent($lang.'about/');
-			$breadcrumbs->push($lang.'Обслуживание', route($lang.'about/service'));
+			$breadcrumbs->push(trans('user/template.service'), route($lang.'about/service'));
 		});
 }
 

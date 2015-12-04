@@ -1,18 +1,18 @@
 @extends('user/template')
 
-@section('title', 'О нас')
+@section('title', trans('user/template.about'))
 
 @section('content')
 	<div class='row'>
 		<div class="col-sm-2">
 			<ul class="nav nav-pills nav-stacked">
-				<li class="active"><a href="/about">О нас</a></li>
-				<li><a href="{{link_loc()}}/about/network">Сеть ресторанов</a></li>
-				<li><a href="{{link_loc()}}/about/service">Обслуживание</a></li>
-				<li><a href="{{link_loc()}}/about/contacts">Контакты</a></li>
-				<li><a href="{{link_loc()}}/about/rewards">Награды</a></li>
-				<li><a href="{{link_loc()}}/about/staff">Персонал</a></li>
-				<li><a href="{{link_loc()}}/about/guestbook">Отзывы</a></li>
+				<li class="active"><a href="{{link_loc()}}/about">{{ trans('user/template.about') }}</a></li>
+				<li><a href="{{link_loc()}}/about/network">{{ trans('user/template.network') }}</a></li>
+				<li><a href="{{link_loc()}}/about/service">{{ trans('user/template.service') }}</a></li>
+				<li><a href="{{link_loc()}}/about/contacts">{{ trans('user/template.contacts') }}</a></li>
+				<li><a href="{{link_loc()}}/about/rewards">{{ trans('user/template.rewards') }}</a></li>
+				<li><a href="{{link_loc()}}/about/staff">{{ trans('user/template.staff') }}</a></li>
+				<li><a href="{{link_loc()}}/about/guestbook">{{ trans('user/template.guestbook') }}</a></li>
 			</ul>
 		</div>
 
@@ -22,7 +22,7 @@
 		<div class='col-sm-10 col-xs-12'>
 			<div class='row'>
 				<div class='col-lg-12'>
-					<a class='about__header__link' href='/about/network'><h4 class='about__header__block'>Сеть ресторанов</h4></a>
+					<a class='about__header__link' href='{{link_loc()}}/about/network'><h4 class='about__header__block'>{{ trans('user/template.network') }}</h4></a>
 						<div class='row'>
 							<div class='col-sm-3 col-xs-12'>
 								<img class='about__img' src='/assets/img/ipad-632394_1920.jpg'>
@@ -32,13 +32,13 @@
 							</div>
 
 							<div class='col-sm-9 col-xs-12'>
-								<p>В данном разделе содержится перечень всех ресторанов нашей сети с указанием их местоположения на карте.</p>
+								<p>{{ trans('user/about/index.network') }}</p>
 							</div>
 						</div>
 				</div>
 
 				<div class='col-lg-12 spacer40'>
-					<a class='about__header__link' href='/about/service'><h4 class='about__header__block'>Обслуживание</h4></a>
+					<a class='about__header__link' href='{{link_loc()}}/about/service'><h4 class='about__header__block'>{{ trans('user/template.service') }}</h4></a>
 						<div class='row'>
 							<div class='col-sm-3 col-xs-12'>
 								<img class='about__img' src='/assets/img/table-settings-873232_1920.jpg'>
@@ -48,13 +48,13 @@
 							</div>
 
 							<div class='col-sm-9 col-xs-12'>
-								<p>Хочешь узнать, как у нас обслуживают? Тогда заходи в этот раздел.</p>
+								<p>{{ trans('user/about/index.service') }}</p>
 							</div>
 						</div>
 				</div>
 
 				<div class='col-lg-12 spacer40'>
-					<a class='about__header__link' href='about_contacts.html'><h4 class='about__header__block'>Контакты</h4></a>
+					<a class='about__header__link' href='{{link_loc()}}about_contacts.html'><h4 class='about__header__block'>{{ trans('user/template.contacts') }}</h4></a>
 						<div class='row'>
 							<div class='col-sm-3 col-xs-12'>
 								<img class='about__img' src='/assets/img/frog-949599_1920.jpg'>
@@ -64,13 +64,13 @@
 							</div>
 
 							<div class='col-sm-9 col-xs-12'>
-								<p>Хочешь с нами связаться? Кликай на заголовок этого блока, чтобы узнать, как это сделать.</p>
+								<p>{{ trans('user/about/index.contacts') }}</p>
 							</div>
 						</div>
 				</div>
 
 				<div class='col-lg-12 spacer40'>
-					<a class='about__header__link' href='about_rewards.html'><h4 class='about__header__block'>Награды</h4></a>
+					<a class='about__header__link' href='{{link_loc()}}about_rewards.html'><h4 class='about__header__block'>{{ trans('user/template.rewards') }}</h4></a>
 						<div class='row'>
 							<div class='col-sm-3 col-xs-12'>
 								<img class='about__img' src='/assets/img/certificate-40984_1280.png'>
@@ -80,13 +80,13 @@
 							</div>
 
 							<div class='col-sm-9 col-xs-12'>
-								<p>Здесь рассказано про то, какие мы классные и сколько наград урвали.</p>
+								<p>{{ trans('user/about/index.rewards') }}</p>
 							</div>
 						</div>
 				</div>
 
 				<div class='col-lg-12 spacer40'>
-					<a class='about__header__link' href='about_staff.html'><h4 class='about__header__block'>Персонал</h4></a>
+					<a class='about__header__link' href='{{link_loc()}}about_staff.html'><h4 class='about__header__block'>{{ trans('user/template.staff') }}</h4></a>
 						<div class='row'>
 							<div class='col-sm-3 col-xs-12'>
 								<img class='about__img' src='/assets/img/staff.jpg'>
@@ -96,13 +96,13 @@
 							</div>
 
 							<div class='col-sm-9 col-xs-12'>
-								<p>Секретное досье НА КАЖДОГО нашего рабочего.</p>
+								<p>{{ trans('user/about/index.staff') }}</p>
 							</div>
 						</div>
 				</div>
 
 				<div class='col-lg-12 spacer40'>
-					<a class='about__header__link' href='about_guestbook.html'><h4 class='about__header__block'>Отзывы</h4></a>
+					<a class='about__header__link' href='{{link_loc()}}about_guestbook.html'><h4 class='about__header__block'>{{ trans('user/template.guestbook') }}</h4></a>
 						<div class='row'>
 							<div class='col-sm-3 col-xs-12'>
 								<img class='about__img' src='/assets/img/guest-book-guest-77941_1920.jpg'>
@@ -112,7 +112,7 @@
 							</div>
 
 							<div class='col-sm-9 col-xs-12'>
-								<p>Хочешь оставить своё убер-важное мнение? Жми на красную полоску чуть выше.</p>
+								<p>{{ trans('user/about/index.guestbook') }}</p>
 							</div>
 						</div>
 				</div>

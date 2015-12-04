@@ -13,16 +13,16 @@
 		<div class=' col-sm-6 col-xs-12'>
 			<div class="slider">
 				<ul class='bxslider' style='height: 300px'>
-					<li><img src='/assets/img/chinese-food-951889_1920.jpg' title='Какой-то китайский салат'></li>
-					<li><img src='/assets/img/dish-918613_1920.jpg' title='Милипиздрический блинчик с чем-то вкусным внутри'></li>
-					<li><img src='/assets/img/food-878447_1920.jpg' title='Это просто нарезаные баклажаны, лол'></li>
-					<li><img src='/assets/img/dinner-939434_1920.jpg' title='Куча салатов на любой вкус'></li>
-					<li><img src='/assets/img/french-fries-932849_1920.jpg' title='Ништяковая пища'></li>
-					<li><img src='/assets/img/meal-918639_1920.jpg' title='Кусочек мяса на полтарелки за мильён евро'></li>
-					<li><img src='/assets/img/meal-918758_1920.jpg' title='Шмат рыбы размером на полпепельницы'></li>
-					<li><img src='/assets/img/sushi-932868_1920.jpg' title='Суши для твоей тёлки'></li>
-					<li><img src='/assets/img/spaghetti-863304_1280.jpg' title='Макарохи'></li>
-					<li><img src='/assets/img/meal-932966_1920.jpg' title='Чайная ложка пюрехи и столько же мяса'></li>
+					<li><img src='/assets/img/chinese-food-951889_1920.jpg' title="{{ trans('user/index.slider_1') }}"></li>
+					<li><img src='/assets/img/dish-918613_1920.jpg' title="{{ trans('user/index.slider_2') }}"></li>
+					<li><img src='/assets/img/food-878447_1920.jpg' title="{{ trans('user/index.slider_3') }}"></li>
+					<li><img src='/assets/img/dinner-939434_1920.jpg' title="{{ trans('user/index.slider_4') }}"></li>
+					<li><img src='/assets/img/french-fries-932849_1920.jpg' title="{{ trans('user/index.slider_5') }}"></li>
+					<li><img src='/assets/img/meal-918639_1920.jpg' title="{{ trans('user/index.slider_6') }}"></li>
+					<li><img src='/assets/img/meal-918758_1920.jpg' title="{{ trans('user/index.slider_7') }}"></li>
+					<li><img src='/assets/img/sushi-932868_1920.jpg' title="{{ trans('user/index.slider_8') }}"></li>
+					<li><img src='/assets/img/spaghetti-863304_1280.jpg' title="{{ trans('user/index.slider_9') }}"></li>
+					<li><img src='/assets/img/meal-932966_1920.jpg' title="{{ trans('user/index.slider_10') }}"></li>
 				</ul>
 			</div>
 			<script>
@@ -36,14 +36,7 @@
 	</div>
 	<div class="row">
 		<div class="col-xs-12" style='text-align: center'>
-			<h3>Мы - команда профессионалов!</h3>
-			<p>Качество еды для нас важнее всего...</p>
-			<p>...даже названия</p>
-			<p>...даже дизайна сайта</p>
-			<p>...даже внешнего вида нашего директора...</p>
-			<br>
-			<br>
-			<p>А вот и он:</p>
+			{!! trans('user/index.before_photo') !!}
 		</div>
 	</div>
 	<div class='row'>
@@ -53,9 +46,7 @@
 			<img src='/assets/img/direktor.jpg' style='width:100%'>
 		</div>
 		<div class="col-sm-3">
-			<h3>Зюлягин С. Я.</h3> 
-			<p>Дорогие клиенты!</p>
-			<p>Мы рады приветствовать вас на нашем Сайте! Работая над ним мы старались для вас!</p>
+			{!! trans('user/index.after_photo') !!}
 		</div>
 		<div class="col-sm-3 hidden-xs">
 		</div>
@@ -64,7 +55,7 @@
 		<div class="col-sm-3 hidden-xs">
 		</div>
 		<div class='col-sm-6'>
-			<h3>Последние новости:</h3>
+			<h3>{{ trans('user/index.news') }}</h3>
 		</div>
 		<div class="col-sm-3 hidden-xs">
 		</div>
