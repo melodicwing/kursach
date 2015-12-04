@@ -2,8 +2,6 @@
 
 @section('title', 'Новости')
 
-@section('breadcrumbs', Breadcrumbs::render('news'))
-
 @section('content')
 	<div class='row'>
 		<div class='col-sm-3 hidden-xs'>

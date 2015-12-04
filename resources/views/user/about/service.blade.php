@@ -2,8 +2,6 @@
 
 @section('title', 'О нас / Обслуживание')
 
-@section('breadcrumbs', Breadcrumbs::render('about/service'))
-
 @section('content')
 	<div class='row'>
 				<div class='col-xs-12'>

@@ -2,7 +2,7 @@
 
 @section('title', 'О нас / Сеть ресторанов')
 
-@section('breadcrumbs', Breadcrumbs::render('about/network'))
+@section('breadcrumbs', Breadcrumbs::render())
 
 @section('content')
 	<div class='row'>

@@ -2,19 +2,17 @@
 
 @section('title', 'О нас')
 
-@section('breadcrumbs', Breadcrumbs::render('about'))
-
 @section('content')
 	<div class='row'>
 		<div class="col-sm-2">
 			<ul class="nav nav-pills nav-stacked">
 				<li class="active"><a href="/about">О нас</a></li>
-				<li><a href="/about/network">Сеть ресторанов</a></li>
-				<li><a href="/about/service">Обслуживание</a></li>
-				<li><a href="/about/contacts">Контакты</a></li>
-				<li><a href="/about/rewards">Награды</a></li>
-				<li><a href="/about/staff">Персонал</a></li>
-				<li><a href="/about/guestbook">Отзывы</a></li>
+				<li><a href="{{link_loc()}}/about/network">Сеть ресторанов</a></li>
+				<li><a href="{{link_loc()}}/about/service">Обслуживание</a></li>
+				<li><a href="{{link_loc()}}/about/contacts">Контакты</a></li>
+				<li><a href="{{link_loc()}}/about/rewards">Награды</a></li>
+				<li><a href="{{link_loc()}}/about/staff">Персонал</a></li>
+				<li><a href="{{link_loc()}}/about/guestbook">Отзывы</a></li>
 			</ul>
 		</div>
 

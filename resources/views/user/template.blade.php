@@ -7,6 +7,7 @@
 		<div class="container">
 
 			<div class="jumbotron logo">
+				<p> lang</p>
 				<h1 class='logo'>Кушай!</h1>
 				<p class='logo'>наша еда лучше, чем название</p>
 			</div>
@@ -25,7 +26,7 @@
 							<li><a href="{{link_loc()}}/">Главная страница</a></li>
 							<li><a href="{{link_loc()}}/news">Новости</a></li>
 							<li class="dropdown">
-								<a class="dropdown-toggle disabled" data-toggle="dropdown" href="/about">О нас<span class="caret"></span></a>
+								<a class="dropdown-toggle disabled" data-toggle="dropdown" href="{{link_loc()}}/about">О нас<span class="caret"></span></a>
 								<ul class="dropdown-menu">
 									<li><a href="{{link_loc()}}/about/network">Сеть ресторанов</a></li>
 									<li><a href="{{link_loc()}}/about/service">Обслуживание</a></li>
@@ -58,7 +59,7 @@
 					<li class='active'>Отзывы</li>
 				</ul>
 			</div> -->
-			@yield('breadcrumbs')
+			@yield('breadcrumbs', Breadcrumbs::render())
 		</div>
 
 		<div class='container spacer'>
