@@ -46,8 +46,8 @@
 								<a class="dropdown-toggle" data-toggle="dropdown" href="#">{{ trans('user/template.booking') }}
 								<span class="caret"></span></a>
 								<ul class="dropdown-menu">
-									<li><a href="#">{{ trans('user/template.booking_table') }}</a></li>
-									<li><a href="#">{{ trans('user/template.booking_event') }}</a></li>
+									<li><a href="{{link_loc()}}/table">{{ trans('user/template.table') }}</a></li>
+									<li><a href="{{link_loc()}}/event">{{ trans('user/template.event') }}</a></li>
 								</ul>
 							</li>
 							<li><a href="/map">{{ trans('user/template.map') }}</a></li>

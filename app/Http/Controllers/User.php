@@ -55,4 +55,9 @@ class User extends Controller
 	{
 		return view('user/menu');
 	}
+
+	function table()
+	{
+		return view('user/table');
+	}
 }

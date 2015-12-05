@@ -12,8 +12,8 @@
 // 		'guestbook' => '';
 // 	'menu' => '';
 // 	'booking' => '';
-// 		'booking_table' => '';
-// 		'booking_event' => '';
+// 		'table' => '';
+// 		'event' => '';
 // 	'map' => '';
 // 	'sitemap' => '';
 // ];
@@ -30,8 +30,8 @@ return [
 		'guestbook' => 'Guestbook',
 	'menu' => 'Menu',
 	'booking' => 'Booking',
-		'booking_table' => 'Booking table',
-		'booking_event' => 'Booking event',
+		'table' => 'Booking table',
+		'event' => 'Booking event',
 	'map' => 'Map',
 	'sitemap' => 'Sitemap',
 ];

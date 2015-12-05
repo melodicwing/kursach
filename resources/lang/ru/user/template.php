@@ -12,8 +12,8 @@
 // 		'guestbook' => '';
 // 	'menu' => '';
 // 	'booking' => '';
-// 		'booking_table' => '';
-// 		'booking_event' => '';
+// 		'table' => '';
+// 		'event' => '';
 // 	'map' => '';
 // 	'sitemap' => '';
 // ];
@@ -30,8 +30,8 @@ return [
 		'guestbook' => 'Отзывы',
 	'menu' => 'Меню',
 	'booking' => 'Заказ',
-		'booking_table' => 'Заказ столика',
-		'booking_event' => 'Заказ мероприятия',
+		'table' => 'Заказ столика',
+		'event' => 'Заказ мероприятия',
 	'map' => 'Схема проезда',
 	'sitemap' => 'Карта сайта',
 ];

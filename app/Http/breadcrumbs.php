@@ -66,6 +66,12 @@ foreach ($locales as $item) {
 		$breadcrumbs->parent($lang.'home');
 		$breadcrumbs->push(trans('user/template.menu'), route($lang.'menu'));
 	});
+
+	//Заказ столика
+	Breadcrumbs::register($lang.'table', function($breadcrumbs) use ($lang){
+		$breadcrumbs->parent($lang.'home');
+		$breadcrumbs->push(trans('user/template.table'), route($lang.'table'));
+	});
 }
 
 // //Главная

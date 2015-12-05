@@ -56,6 +56,7 @@ foreach ($locales as $item) {
 				Route::get('/guestbook', 'User@about_guestbook')->name('guestbook');
 			});
 			Route::get('/menu', 'User@menu')->name('menu');
+			Route::get('/table', 'User@table')->name('table');
 	});
 }
 
