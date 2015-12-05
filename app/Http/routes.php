@@ -58,6 +58,8 @@ foreach ($locales as $item) {
 			Route::get('/menu', 'User@menu')->name('menu');
 			Route::get('/table', 'User@table')->name('table');
 			Route::get('/event', 'User@event')->name('event');
+			Route::get('/map', 'User@map')->name('map');
+			Route::get('/sitemap', 'User@sitemap')->name('sitemap');
 	});
 }
 

@@ -50,8 +50,8 @@
 									<li><a href="{{link_loc()}}/event">{{ trans('user/template.event') }}</a></li>
 								</ul>
 							</li>
-							<li><a href="/map">{{ trans('user/template.map') }}</a></li>
-							<li><a href="/guestbook">{{ trans('user/template.sitemap') }}</a></li>
+							<li><a href="{{link_loc()}}/map">{{ trans('user/template.map') }}</a></li>
+							<li><a href="{{link_loc()}}/sitemap">{{ trans('user/template.sitemap') }}</a></li>
 						</ul>
 				    </div>
 				  </div>

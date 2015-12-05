@@ -65,4 +65,16 @@ class User extends Controller
 	{
 		return view('user/event');
 	}
+
+	function map()
+	{
+		return view('user/map');
+	}
+
+
+
+	function sitemap()
+	{
+		return view('user/sitemap');
+	}
 }

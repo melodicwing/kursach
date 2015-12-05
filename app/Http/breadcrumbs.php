@@ -78,6 +78,18 @@ foreach ($locales as $item) {
 		$breadcrumbs->parent($lang.'home');
 		$breadcrumbs->push(trans('user/template.event'), route($lang.'event'));
 	});
+
+	//Схема проезда
+	Breadcrumbs::register($lang.'map', function($breadcrumbs) use ($lang){
+		$breadcrumbs->parent($lang.'home');
+		$breadcrumbs->push(trans('user/template.map'), route($lang.'map'));
+	});
+
+	//Карта сайта
+	Breadcrumbs::register($lang.'sitemap', function($breadcrumbs) use ($lang){
+		$breadcrumbs->parent($lang.'home');
+		$breadcrumbs->push(trans('user/template.sitemap'), route($lang.'sitemap'));
+	});
 }
 
 // //Главная
