@@ -306,6 +306,12 @@ a:focus {
 }
 
 
+/* event */
+.label__final__price {
+	padding-top: 0 !important;
+}
+
+
 /* colors */
 /* red #b30000 */
 /* bs-red #e45335 */

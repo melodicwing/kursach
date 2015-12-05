@@ -72,6 +72,12 @@ foreach ($locales as $item) {
 		$breadcrumbs->parent($lang.'home');
 		$breadcrumbs->push(trans('user/template.table'), route($lang.'table'));
 	});
+
+	//Заказ мероприятия
+	Breadcrumbs::register($lang.'event', function($breadcrumbs) use ($lang){
+		$breadcrumbs->parent($lang.'home');
+		$breadcrumbs->push(trans('user/template.event'), route($lang.'event'));
+	});
 }
 
 // //Главная

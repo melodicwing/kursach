@@ -54,7 +54,7 @@
 				</div>
 
 				<div class='col-lg-12 spacer40'>
-					<a class='about__header__link' href='{{link_loc()}}about_contacts.html'><h4 class='about__header__block'>{{ trans('user/template.contacts') }}</h4></a>
+					<a class='about__header__link' href='{{link_loc()}}/about/contacts'><h4 class='about__header__block'>{{ trans('user/template.contacts') }}</h4></a>
 						<div class='row'>
 							<div class='col-sm-3 col-xs-12'>
 								<img class='about__img' src='/assets/img/frog-949599_1920.jpg'>
@@ -70,7 +70,7 @@
 				</div>
 
 				<div class='col-lg-12 spacer40'>
-					<a class='about__header__link' href='{{link_loc()}}about_rewards.html'><h4 class='about__header__block'>{{ trans('user/template.rewards') }}</h4></a>
+					<a class='about__header__link' href='{{link_loc()}}/about/rewards'><h4 class='about__header__block'>{{ trans('user/template.rewards') }}</h4></a>
 						<div class='row'>
 							<div class='col-sm-3 col-xs-12'>
 								<img class='about__img' src='/assets/img/certificate-40984_1280.png'>
@@ -86,7 +86,7 @@
 				</div>
 
 				<div class='col-lg-12 spacer40'>
-					<a class='about__header__link' href='{{link_loc()}}about_staff.html'><h4 class='about__header__block'>{{ trans('user/template.staff') }}</h4></a>
+					<a class='about__header__link' href='{{link_loc()}}/about/staff'><h4 class='about__header__block'>{{ trans('user/template.staff') }}</h4></a>
 						<div class='row'>
 							<div class='col-sm-3 col-xs-12'>
 								<img class='about__img' src='/assets/img/staff.jpg'>
@@ -102,7 +102,7 @@
 				</div>
 
 				<div class='col-lg-12 spacer40'>
-					<a class='about__header__link' href='{{link_loc()}}about_guestbook.html'><h4 class='about__header__block'>{{ trans('user/template.guestbook') }}</h4></a>
+					<a class='about__header__link' href='{{link_loc()}}/about/guestbook'><h4 class='about__header__block'>{{ trans('user/template.guestbook') }}</h4></a>
 						<div class='row'>
 							<div class='col-sm-3 col-xs-12'>
 								<img class='about__img' src='/assets/img/guest-book-guest-77941_1920.jpg'>

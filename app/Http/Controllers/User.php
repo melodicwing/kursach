@@ -60,4 +60,9 @@ class User extends Controller
 	{
 		return view('user/table');
 	}
+
+	function event()
+	{
+		return view('user/event');
+	}
 }
