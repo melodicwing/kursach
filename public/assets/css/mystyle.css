@@ -18,10 +18,13 @@ img {
 	width: 100%;
 }
 
-.label__padding-top_7 {
-	padding-top: 7px !important;
+.label__padding-top_6 {
+	padding-top: 6px !important;
 }
 
+.control-label {
+	text-align: right;
+}
 
 /* logo */
 
@@ -313,6 +316,31 @@ a:focus {
 /* event */
 .label__final__price {
 	padding-top: 0 !important;
+}
+
+.label__contact {
+	text-align: left !important;
+	margin-bottom: 5px !important;
+}
+
+.final__price__label {
+	width: 50%;
+	text-align: right;
+	padding: 10px 15px !important;
+}
+
+.final__price__value {
+	width: 50%;
+	text-align: left;
+	padding: 10px 15px !important;
+}
+
+.bill {
+	margin-bottom: 0px !important;
+}
+
+.bill td, .bill th {
+	text-align: center;
 }
 
 

@@ -16,7 +16,7 @@
 					<div class='row'>
 						<div class='col-xs-6'>
 							<div class='row'>
-								<label for='input__from_h' class='col-xs-6 label__padding-top_7'>{{ trans('user/table.from_h') }}</label>
+								<label for='input__from_h' class='col-xs-6 label__padding-top_6'>{{ trans('user/table.from_h') }}</label>
 								<div class='col-xs-6'>
 									<select class='form-control' id='input__from_h'>
 										<option>00</option>
@@ -49,7 +49,7 @@
 						</div>
 						<div class='col-xs-6'>
 							<div class='row'>
-								<label for='input__from_m' class='col-xs-6 label__padding-top_7'>{{ trans('user/table.from_m') }}</label>
+								<label for='input__from_m' class='col-xs-6 label__padding-top_6'>{{ trans('user/table.from_m') }}</label>
 								<div class='col-xs-6'>
 									<select class='form-control' id='input__from_m'>
 										<option>00</option>
@@ -76,7 +76,7 @@
 					<div class='row'>
 						<div class='col-xs-6'>
 							<div class='row'>
-								<label for='input__to_h' class='col-xs-6 label__padding-top_7'>{{ trans('user/table.to_h') }}</label>
+								<label for='input__to_h' class='col-xs-6 label__padding-top_6'>{{ trans('user/table.to_h') }}</label>
 								<div class='col-xs-6'>
 									<select class='form-control' id='input__to_h'>
 										<option>00</option>
@@ -109,7 +109,7 @@
 						</div>
 						<div class='col-xs-6'>
 							<div class='row'>
-								<label for='input__to_m' class='col-xs-6 label__padding-top_7'>{{ trans('user/table.to_m') }}</label>
+								<label for='input__to_m' class='col-xs-6 label__padding-top_6'>{{ trans('user/table.to_m') }}</label>
 								<div class='col-xs-6'>
 									<select class='form-control' id='input__to_m'>
 										<option>00</option>
