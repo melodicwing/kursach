@@ -78,6 +78,9 @@ Route::group(['prefix' => 'admin'], function(){
 	Route::group(['middleware' => 'AdminLogin'], function() {
 		Route::get('/', 'Admin@index');
 		Route::get('/logout', 'Admin@logout');
+		
+		Route::get('/news', 'Admin@news');
+		Route::post('/news', 'Admin@news');
 	});
 });
 

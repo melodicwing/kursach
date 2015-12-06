@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-
+use App\News;
 
 class User extends Controller
 {
@@ -13,7 +13,8 @@ class User extends Controller
 
 	function news()
 	{
-		return view('user/news');
+		$news = News::orderBy('created_at', 'DESC')->paginate(10);
+		return view('user/news', [ 'news' => $news ]);
 	}
 
 	function about()

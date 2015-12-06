@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use \App\News;
 
 class Admin extends Controller
 {
@@ -40,5 +41,14 @@ class Admin extends Controller
 	{
 		\Auth::logout();
 		return redirect('/admin');
+	}
+
+	public function news(Request $request)
+	{
+		if ( $request->isMethod('POST') ) {
+			News::create($request->except('_token'));
+		}
+		$news = News::orderBy('created_at', 'DESC')->paginate(1);
+		return view('admin/news', [ 'news' => $news ]);
 	}
 }
