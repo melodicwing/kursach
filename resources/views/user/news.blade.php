@@ -22,14 +22,14 @@
 					<p>{!! $item->message !!}</p>
 				</div>
 			</div>
-			<div class='row'>
-				<div class='col-sm-3 hidden-xs'>
-				</div>
-				<div class='col-sm-6'>
-					{!! $news->render() !!}
-				</div>
-			</div>
 		@endforeach
+		<div class='row'>
+			<div class='col-sm-3 hidden-xs'>
+			</div>
+			<div class='col-sm-6'>
+				{!! $news->render() !!}
+			</div>
+		</div>
 	@else
 		<div class='row'>
 				<div class='col-sm-3 hidden-xs'>
