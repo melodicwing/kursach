@@ -46,7 +46,17 @@ class Admin extends Controller
 	public function news(Request $request)
 	{
 		if ( $request->isMethod('POST') ) {
-			News::create($request->except('_token'));
+			switch ( $request->input('type') ) {
+				case 'insert':
+					News::create($request->except('_token'));
+					break;
+				case 'update':
+					News::find( $request->input('id') )->update([
+						'title' => $request->input('title'),
+						'message' => $request->input('message'),
+					]);
+					break;
+			}
 		}
 		if ( $request->isMethod('GET') ) {
 			$item = News::find($request->input('remove'));
