@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use \App\News;
+use \App\Restauraunt;
 
 class Admin extends Controller
 {
@@ -66,5 +67,30 @@ class Admin extends Controller
 		}
 		$news = News::orderBy('created_at', 'DESC')->paginate(10);
 		return view('admin/news', [ 'news' => $news ]);
+	}
+
+	public function network(Request $request)
+	{
+		if ( $request->isMethod('POST') ) {
+			switch ( $request->input('type') ) {
+				case 'insert':
+					Restauraunt::insert($request);
+					break;
+				case 'update':
+					Restauraunt::find( $request->input('id') )->update([
+						'name' => $request->input('name'),
+						'desription' => $request->input('desription'),
+					]);
+					break;
+			}
+		}
+		if ( $request->isMethod('GET') ) {
+			$item = Restauraunt::find($request->input('remove'));
+			if ( $item ) {
+				$item->delete();
+			}
+		}
+		$rests = Restauraunt::orderBy('created_at', 'DESC')->paginate(9);
+		return view('admin/network', [ 'rests' => $rests ]);
 	}
 }

@@ -37,6 +37,12 @@ foreach ($locales as $item) {
 			$breadcrumbs->push(trans('user/template.network'), route($lang.'about/network'));
 		});
 
+			//О нас / Сеть ресторанов / ресторан подробно
+			Breadcrumbs::register($lang.'about/network/detail', function($breadcrumbs, $rest) use ($lang){
+				$breadcrumbs->parent($lang.'about/network');
+				$breadcrumbs->push($rest->name, route($lang.'news/detail', $rest->id));
+			});
+
 		//О нас / Обслуживание
 		Breadcrumbs::register($lang.'about/service', function($breadcrumbs) use ($lang){
 			$breadcrumbs->parent($lang.'about/');

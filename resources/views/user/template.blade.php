@@ -64,7 +64,7 @@
 					<li class='active'>Отзывы</li>
 				</ul>
 			</div> -->
-			@yield('breadcrumbs')
+			@yield('breadcrumbs', Breadcrumbs::render())
 		</div>
 
 		<div class='container spacer'>

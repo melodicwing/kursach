@@ -13,4 +13,6 @@
 <link href='/assets/toopay-bootstrap-markdown/css/bootstrap-markdown.min.css' rel='stylesheet'>
 <script src='/assets/toopay-bootstrap-markdown/js/bootstrap-markdown.js'></script>
 
+<script src='/assets/js/bootstrap.file-input.js'></script>
+
 <link href='/assets/css/admin_mystyle.css' rel='stylesheet'>

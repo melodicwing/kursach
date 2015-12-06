@@ -53,6 +53,8 @@ foreach ($locales as $item) {
 			Route::group(['prefix' => 'about', 'as' => 'about/'], function(){
 				Route::get('/', 'User@about')->name('');
 				Route::get('/network', 'User@about_network')->name('network');
+					Route::model('rest', 'App\Restauraunt');
+					Route::get('/network/{rest}', 'User@about_network_detail')->name('network/detail');
 				Route::get('/service', 'User@about_service')->name('service');
 				Route::get('/contacts', 'User@about_contacts')->name('contacts');
 				Route::get('/rewards', 'User@about_rewards')->name('rewards');
@@ -83,6 +85,9 @@ Route::group(['prefix' => 'admin'], function(){
 		
 		Route::get('/news', 'Admin@news');
 		Route::post('/news', 'Admin@news');
+
+		Route::get('/network', 'Admin@network');
+		Route::post('/network', 'Admin@network');
 	});
 });
 

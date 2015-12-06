@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\News;
+use \App\Restauraunt;
 
 class User extends Controller
 {
@@ -30,8 +31,14 @@ class User extends Controller
 
 		function about_network()
 		{
-			return view('user/about/network');
+			$rests = Restauraunt::orderBy('created_at', 'DESC')->paginate(9);
+			return view('user/about/network', [ 'rests' => $rests ]);
 		}
+
+			function about_network_detail($rest)
+			{
+				return view('user/about/network_detail', [ 'rest' => $rest ]);
+			}
 
 		function about_service()
 		{

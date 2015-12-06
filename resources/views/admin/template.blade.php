@@ -21,6 +21,7 @@
 						<div class='collapse navbar-collapse' id='myNavbar'>
 							<ul class="nav navbar-nav">
 								<li {{ Request::is('admin/news') ? "class=active" : "" }}><a href='/admin/news'>Новости</a></li>
+								<li {{ Request::is('admin/network') ? "class=active" : "" }}><a href='/admin/network'>Сеть ресторанов</a></li>
 								<!-- <li><a href="/">На основной сайт</a></li> -->
 								<!-- <li {{ Request::is('/admin/hits') ? ' class=active' : '' }}><a href="/admin/hits">Статистика посещений</a></li>
 								<li {{ Request::is('/admin/guestbook') ? ' class=active' : '' }}><a href="/admin/guestbook">Гостевая книга</a></li>
