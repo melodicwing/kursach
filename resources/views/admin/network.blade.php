@@ -54,53 +54,55 @@
 	</div>
 	
 	<hr>
-	{{--
+	
 	<div class='row'>
-		<div class='col-xs-12 col-sm-6 col-sm-offset-3'>
-			<table class='table'>
-				<tr>
-					<th></th>
-					<th></th>
-					<th>Заголовок</th>
-					<th>Текст новости</th>
-					<th>Дата</th>
-				</tr>
-				@foreach($news as $item)
-					<tr data-id={{ $item->id }}>
-						<td><a href='/admin/news?remove={{ $item->id }}' data-toggle='tooltip' title='Удалить'><span class='glyphicon glyphicon-remove'></span></a></td>
-						<td><a class='edit_link' data-id={{ $item->id }} data-toggle='tooltip' title='Редактировать' href='#'><span class='glyphicon glyphicon-edit'></span></a></td>
-						<td data-title>{{ $item->title }}</td>
-						<td data-message>{{ $item->message }}</td>
-						<td>{{ $item->created_at }}</td>
-					</tr>
-				@endforeach
-			</table>
-			{!! $news->render() !!}
+	@foreach($rests as $item)
+		<div class='col-sm-4'>
+			<h4>
+				<span data-name data-id={{ $item->id }}>{{ $item->name }}</span>
+				<a class='edit_link' data-id={{ $item->id }} data-toggle='tooltip' title='Редактировать' href='#'>
+					<span class='glyphicon glyphicon-edit'></span>
+				</a>
+				<a href='/admin/network?remove={{ $item->id }}' data-toggle='tooltip' title='Удалить'>
+					<span class='glyphicon glyphicon-remove'></span>
+				</a>
+			</h4>
+
+			<div data-description data-id={{ $item->id }}>{{--
+				--}}{!! $item->description !!}{{--
+			--}}</div>
+			
+			<img src='{{ $item->img_path }}'>
+
+			<div class='hidden-xs spacer10'>
+				&nbsp
+			</div>
+		</div>
+		<div class='visible-xs-block spacer10'>
+			&nbsp
+		</div>
+	@endforeach
+	</div>
+	<div class='row'>
+		<div class='col-xs-12 text-center'>
+			{!! $rests->render() !!}
 		</div>
 	</div>
-	--}}
 
 	<script>
-		var current_id = 0;
-
 		$(document).ready(function(){
 			$('input[type=file]').bootstrapFileInput();
 
 			$('[data-toggle="tooltip"]').tooltip();
 
 			$('.edit_link').click(function(){
-				if ( current_id ) {
-					$('tr[data-id=' + current_id +']').removeClass('info');	
-				}
-				// current_id = $(this).data('id');
 				var id = current_id = $(this).data('id');
-				$('tr[data-id=' + id +']').addClass('info');
 				$('#type_input').val('update');
 				$('#record_id').val(id);
 				$('#type_header').text('Редактирование записи');
-				$('#title').val( $('tr[data-id=' + id + ']').find('td[data-title]').text() );
-				$('#message').data('markdown').setContent(
-					toMarkdown( $('tr[data-id=' + id + ']').find('td[data-message]').text() )
+				$('#name').val( $('[data-name][data-id=' + id + ']').text() );
+				$('#description').data('markdown').setContent(
+					toMarkdown($('[data-description][data-id=' + id + ']').html())
 				);
 				$('#cancel_div').removeClass('hidden');
 				$('#submit_div').addClass('col-sm-6');
@@ -108,16 +110,12 @@
 
 			$('#cancel').click(function(e){
 				e.preventDefault();
-				if ( current_id ) {
-					$('tr[data-id=' + current_id +']').removeClass('info');	
-				}
 				$('#type_input').val('insert');
 				$('#type_header').text('Добавление записи');
-				$('#title').val('');
-				$('#message').data('markdown').setContent('');
+				$('#name').val('');
+				$('#description').data('markdown').setContent('');
 				$('#cancel_div').addClass('hidden');
 				$('#submit_div').removeClass('col-sm-6');
-				current_id = 0;
 			});
 		});
 

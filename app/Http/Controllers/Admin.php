@@ -77,10 +77,7 @@ class Admin extends Controller
 					Restauraunt::insert($request);
 					break;
 				case 'update':
-					Restauraunt::find( $request->input('id') )->update([
-						'name' => $request->input('name'),
-						'desription' => $request->input('desription'),
-					]);
+					Restauraunt::find( $request->input('id') )->my_update($request);
 					break;
 			}
 		}
