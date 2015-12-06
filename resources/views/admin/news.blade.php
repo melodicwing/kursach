@@ -28,12 +28,16 @@
 		<div class='col-xs-12 col-sm-6 col-sm-offset-3'>
 			<table class='table'>
 				<tr>
+					<th></th>
+					<th></th>
 					<th>Заголовок</th>
 					<th>Текст новости</th>
 					<th>Дата</th>
 				</tr>
 				@foreach($news as $item)
 					<tr>
+						<td><a href='/admin/news?remove={{ $item->id }}'><span class='glyphicon glyphicon-remove'></span></a></td>
+						<td><a href='#'><span class='glyphicon glyphicon-edit'></span></a></td>
 						<td>{{ $item->title }}</td>
 						<td>{{ $item->message }}</td>
 						<td>{{ $item->created_at }}</td>

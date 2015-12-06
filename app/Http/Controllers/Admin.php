@@ -48,7 +48,13 @@ class Admin extends Controller
 		if ( $request->isMethod('POST') ) {
 			News::create($request->except('_token'));
 		}
-		$news = News::orderBy('created_at', 'DESC')->paginate(1);
+		if ( $request->isMethod('GET') ) {
+			$item = News::find($request->input('remove'));
+			if ( $item ) {
+				$item->delete();
+			}
+		}
+		$news = News::orderBy('created_at', 'DESC')->paginate(10);
 		return view('admin/news', [ 'news' => $news ]);
 	}
 }

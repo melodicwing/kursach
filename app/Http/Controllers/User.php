@@ -17,6 +17,12 @@ class User extends Controller
 		return view('user/news', [ 'news' => $news ]);
 	}
 
+		function news_detail($post)
+		{
+			// $news = News::find($id);
+			return view('user/news_detail', [ 'post' => $post ]);
+		}
+
 	function about()
 	{
 		return view('user/about/index');

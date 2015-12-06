@@ -19,6 +19,12 @@ foreach ($locales as $item) {
 		$breadcrumbs->push(trans('user/template.news'), route($lang.'news'));
 	});
 
+		//Новости подробно
+		Breadcrumbs::register($lang.'news/detail', function($breadcrumbs, $post) use ($lang){
+			$breadcrumbs->parent($lang.'news');
+			$breadcrumbs->push($post->title, route($lang.'news/detail', $post->id));
+		});
+
 	//О нас
 	Breadcrumbs::register($lang.'about/', function($breadcrumbs) use ($lang){
 		$breadcrumbs->parent($lang.'home');

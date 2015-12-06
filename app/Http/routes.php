@@ -48,6 +48,8 @@ foreach ($locales as $item) {
 	Route::group(['prefix' => $item, 'as' => $lang], function(){
 		Route::get('/', 'User@index')->name('home');
 			Route::get('/news', 'User@news')->name('news');
+				Route::model('post', 'App\News');
+				Route::get('/news/{post}', 'User@news_detail')->name('news/detail');
 			Route::group(['prefix' => 'about', 'as' => 'about/'], function(){
 				Route::get('/', 'User@about')->name('');
 				Route::get('/network', 'User@about_network')->name('network');

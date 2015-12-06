@@ -17,7 +17,7 @@
 				<div class='col-sm-3 hidden-xs'>
 				</div>
 				<div class='col-sm-6'>
-					<h4><a href='news_detail.html'>{{ $item->title }}</a></h4>
+					<h4><a href='/news/{{ $item->id }}'>{{ $item->title }}</a></h4>
 					<p class='small'>{{ $item->created_at }}</p>
 					<p>{{ $item->message }}</p>
 				</div>
