@@ -1,6 +1,6 @@
 @extends('user/template')
 
-@section('title', trans('user/template.news_detail') )
+@section('title', $post->title )
 
 @section('breadcrumbs', Breadcrumbs::render())
 
@@ -11,7 +11,7 @@
 		<div class='col-sm-6'>
 			<h4>{{ $post->title }}</h4>
 			<p class='small'>{{ $post->created_at }}</p>
-			<p>{{ $post->message }}</p>
+			<p>{!! $post->message !!}</p>
 		</div>
 	</div>
 @endsection

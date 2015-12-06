@@ -14,4 +14,9 @@
 <link href='/assets/css/bootstrap/css/bootstrap.min.css' rel='stylesheet'>
 <script src='/assets/css/bootstrap/js/bootstrap.min.js'></script>
 
+<script src='/assets/toopay-bootstrap-markdown/js/markdown.js'></script>
+<script src='/assets/toopay-bootstrap-markdown/js/to-markdown.js'></script>
+<link href='/assets/toopay-bootstrap-markdown/css/bootstrap-markdown.min.css' rel='stylesheet'>
+<script src='/assets/toopay-bootstrap-markdown/js/bootstrap-markdown.js'></script>
+
 <link href='/assets/css/mystyle.css' rel='stylesheet'>

@@ -8,7 +8,7 @@
 			
 			<h4 id='type_header'>Добавление записи</h4>
 			
-			<form method='POST' action='/admin/news'>
+			<form method='POST' action='/admin/news' onsubmit="parseMessage();">
 				{{ csrf_field() }}
 				<input hidden type='text' id='type_input' value='insert' name='type'>
 				<input hidden type='text' id='record_id' value='' name='id'>
@@ -20,7 +20,7 @@
 
 				<div class="form-group">
 					<label for="message">Текст новости:</label>
-					<textarea class="form-control" id="message"name='message'></textarea>
+					<textarea class="form-control" id="message" name='message' data-provide='markdown'></textarea>
 				</div>
 
 				<div class="form-group">
@@ -85,7 +85,9 @@
 				$('#record_id').val(id);
 				$('#type_header').text('Редактирование записи');
 				$('#title').val( $('tr[data-id=' + id + ']').find('td[data-title]').text() );
-				$('#message').text( $('tr[data-id=' + id + ']').find('td[data-message]').text() );
+				$('#message').data('markdown').setContent(
+					toMarkdown( $('tr[data-id=' + id + ']').find('td[data-message]').text() )
+				);
 				$('#cancel_div').removeClass('hidden');
 				$('#submit_div').addClass('col-sm-6');
 			});
@@ -98,11 +100,20 @@
 				$('#type_input').val('insert');
 				$('#type_header').text('Добавление записи');
 				$('#title').val('');
-				$('#message').text('');
+				$('#message').data('markdown').setContent('');
 				$('#cancel_div').addClass('hidden');
 				$('#submit_div').removeClass('col-sm-6');
 				current_id = 0;
 			});
 		});
+
+		function parseMessage()
+		{
+			$('#message').data('markdown').setContent(
+				$('#message').data('markdown').parseContent()
+			);
+
+			return true;
+		}
 	</script>
 @endsection

@@ -19,7 +19,7 @@
 				<div class='col-sm-6'>
 					<h4><a href='/news/{{ $item->id }}'>{{ $item->title }}</a></h4>
 					<p class='small'>{{ $item->created_at }}</p>
-					<p>{{ $item->message }}</p>
+					<p>{!! $item->message !!}</p>
 				</div>
 			</div>
 			<div class='row'>

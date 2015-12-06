@@ -8,4 +8,9 @@
 <link href='/assets/css/bootstrap-stock/css/bootstrap.min.css' rel='stylesheet'>
 <script src='/assets/css/bootstrap-stock/js/bootstrap.min.js'></script>
 
+<script src='/assets/toopay-bootstrap-markdown/js/markdown.js'></script>
+<script src='/assets/toopay-bootstrap-markdown/js/to-markdown.js'></script>
+<link href='/assets/toopay-bootstrap-markdown/css/bootstrap-markdown.min.css' rel='stylesheet'>
+<script src='/assets/toopay-bootstrap-markdown/js/bootstrap-markdown.js'></script>
+
 <link href='/assets/css/admin_mystyle.css' rel='stylesheet'>
