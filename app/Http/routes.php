@@ -12,10 +12,12 @@
 */
 
 Route::get('sas', function(){
+	Auth::logout();
 	return Request::path();
 });
 
-Route::get('test', function(){
+Route::get('qwe', function(){
+	return var_export(config('database.connections'),1);
 	return config('app.locale');
 });
 
@@ -62,6 +64,22 @@ foreach ($locales as $item) {
 			Route::get('/sitemap', 'User@sitemap')->name('sitemap');
 	});
 }
+
+Route::group(['prefix' => 'admin'], function(){
+	// Registration routes...
+	Route::post('/auth/register', 'Auth\AuthController@postRegister');
+
+	Route::get('/register', 'Admin@get_register');
+	Route::post('/register', 'Admin@post_register');
+
+	Route::get('/login', 'Admin@get_login');
+	Route::post('/auth/login', 'Auth\AuthController@postLogin');
+
+	Route::group(['middleware' => 'AdminLogin'], function() {
+		Route::get('/', 'Admin@index');
+		Route::get('/logout', 'Admin@logout');
+	});
+});
 
 // $locale_pattern = implode('|', $locales);
 // // echo $locale_pattern;
