@@ -42,7 +42,7 @@
 
 				<div class='form-group'>
 					<div class='col-xs-12'>
-						<input type='submit' class='form-control my__form' value='{{ trans('user/event.submit') }}'>
+						<input type='submit' id='submit_bill' class='form-control my__form' value='{{ trans('user/event.submit') }}'>
 					</div>
 				</div>
 			</form>
@@ -60,373 +60,191 @@
 				<div class="tab-content">
 					<div id="first" class="tab-pane fade in active">
 						<div class='spacer'>
-							<div class='row'>
-								<div class='col-sm-4'>
-									<h4 class='about__network__header__block first_1_name'>первое 1</h4>
+							@if($first->count())
+								<div class='row'>
+								@foreach($first as $item)
+									<div class='col-sm-4'>
+										<h4 class='about__network__header__block text-center first_{{ $item->id }}_name'>{{ $item->name }}</h4>
 
-									<form autocomplete=off>
-										<div class='form-group'>
-											<label class='control-label col-xs-6'>{{ trans('user/event.description') }}</label>
-											<div class='col-xs-6'>
-												<p>текст описания</p>
+										<form autocomplete=off class='form-horizontal'>
+											<div class='form-group'>
+												<label class='control-label col-xs-6'>{{ trans('user/event.description') }}</label>
+												<div class='col-xs-6'>
+													{!! $item->description !!}
+												</div>
 											</div>
-										</div>
-										<div class='form-group'>
-											<label class='control-label col-xs-6'>{{ trans('user/event.price') }}</label>
-											<div class='col-xs-6'>
-												<p class='first_1_price'>100</p>
+											<div class='form-group'>
+												<label class='control-label col-xs-6'>{{ trans('user/event.price') }}</label>
+												<div class='col-xs-6'>
+													<p class='first_{{ $item->id }}_price'>{{ $item->price }}</p>
+												</div>
 											</div>
-										</div>
-										<div class='form-group'>
-											<label for='first_1_amount' class='control-label col-xs-6 label__padding-top_6'>{{ trans('user/event.amount') }}</label>
-											<div class='col-xs-6'>
-												<input type='text' class='form-control input__amount' id='first_1_amount' value=0>
+											<div class='form-group'>
+												<label for='first_{{ $item->id }}_amount' class='control-label col-xs-6 label__padding-top_6'>{{ trans('user/event.amount') }}</label>
+												<div class='col-xs-6'>
+													<input type='text' class='form-control input__amount' id='first_{{ $item->id }}_amount' value=0>
+												</div>
 											</div>
-										</div>
-									</form>
+										</form>
 
-									<div class='spacer10'>
-										&nbsp
+										<div class='spacer10'>
+											&nbsp
+										</div>
+									</div>
+								@endforeach
+								</div>
+							@else
+								<div class='row'>
+									<div class='col-sm-3 hidden-xs'>
+									</div>
+									<div class='col-sm-6'>
+										<p>{{ trans('user/menu.no_item') }}</p>
 									</div>
 								</div>
-
-								<div class='col-sm-4'>
-									<h4 class='about__network__header__block first_2_name'>первое 2</h4>
-
-									<form autocomplete=off>
-										<div class='form-group'>
-											<label class='control-label col-xs-6'>{{ trans('user/event.description') }}</label>
-											<div class='col-xs-6'>
-												<p>текст описания</p>
-											</div>
-										</div>
-										<div class='form-group'>
-											<label class='control-label col-xs-6'>{{ trans('user/event.price') }}</label>
-											<div class='col-xs-6'>
-												<p class='first_2_price'>100</p>
-											</div>
-										</div>
-										<div class='form-group'>
-											<label for='first_2_amount' class='control-label col-xs-6 label__padding-top_6'>{{ trans('user/event.amount') }}</label>
-											<div class='col-xs-6'>
-												<input type='text' class='form-control input__amount' id='first_2_amount' value=0>
-											</div>
-										</div>
-									</form>
-
-									<div class='spacer10'>
-										&nbsp
-									</div>
-								</div>
-
-								<div class='col-sm-4'>
-									<h4 class='about__network__header__block first_3_name'>первое 3</h4>
-
-									<form autocomplete=off>
-										<div class='form-group'>
-											<label class='control-label col-xs-6'>{{ trans('user/event.description') }}</label>
-											<div class='col-xs-6'>
-												<p>текст описания</p>
-											</div>
-										</div>
-										<div class='form-group'>
-											<label class='control-label col-xs-6'>{{ trans('user/event.price') }}</label>
-											<div class='col-xs-6'>
-												<p class='first_3_price'>300</p>
-											</div>
-										</div>
-										<div class='form-group'>
-											<label for='first_3_amount' class='control-label col-xs-6 label__padding-top_6'>{{ trans('user/event.amount') }}</label>
-											<div class='col-xs-6'>
-												<input type='text' class='form-control input__amount' id='first_3_amount' value=0>
-											</div>
-										</div>
-									</form>
-
-									<div class='spacer10'>
-										&nbsp
-									</div>
-								</div>
-							</div>
+							@endif
 						</div>
 					</div>
 
 					<div id="second" class="tab-pane fade">
 						<div class='spacer'>
-							<div class='row'>
-								<div class='col-sm-4'>
-									<h4 class='about__network__header__block second_1_name'>второе 1</h4>
+							@if($second->count())
+								<div class='row'>
+								@foreach($second as $item)
+									<div class='col-sm-4'>
+										<h4 class='about__network__header__block text-center second_{{ $item->id }}_name'>{{ $item->name }}</h4>
 
-									<form autocomplete=off>
-										<div class='form-group'>
-											<label class='control-label col-xs-6'>{{ trans('user/event.description') }}</label>
-											<div class='col-xs-6'>
-												<p>текст описания</p>
+										<form autocomplete=off class='form-horizontal'>
+											<div class='form-group'>
+												<label class='control-label col-xs-6'>{{ trans('user/event.description') }}</label>
+												<div class='col-xs-6'>
+													{!! $item->description !!}
+												</div>
 											</div>
-										</div>
-										<div class='form-group'>
-											<label class='control-label col-xs-6'>{{ trans('user/event.price') }}</label>
-											<div class='col-xs-6'>
-												<p class='second_1_price'>100</p>
+											<div class='form-group'>
+												<label class='control-label col-xs-6'>{{ trans('user/event.price') }}</label>
+												<div class='col-xs-6'>
+													<p class='second_{{ $item->id }}_price'>{{ $item->price }}</p>
+												</div>
 											</div>
-										</div>
-										<div class='form-group'>
-											<label for='second_1_amount' class='control-label col-xs-6 label__padding-top_6'>{{ trans('user/event.amount') }}</label>
-											<div class='col-xs-6'>
-												<input type='text' class='form-control input__amount' id='second_1_amount' value=0>
+											<div class='form-group'>
+												<label for='second_{{ $item->id }}_amount' class='control-label col-xs-6 label__padding-top_6'>{{ trans('user/event.amount') }}</label>
+												<div class='col-xs-6'>
+													<input type='text' class='form-control input__amount' id='second_{{ $item->id }}_amount' value=0>
+												</div>
 											</div>
-										</div>
-									</form>
+										</form>
 
-									<div class='spacer10'>
-										&nbsp
+										<div class='spacer10'>
+											&nbsp
+										</div>
+									</div>
+								@endforeach
+								</div>
+							@else
+								<div class='row'>
+									<div class='col-sm-3 hidden-xs'>
+									</div>
+									<div class='col-sm-6'>
+										<p>{{ trans('user/menu.no_item') }}</p>
 									</div>
 								</div>
-
-								<div class='col-sm-4'>
-									<h4 class='about__network__header__block second_2_name'>второе 2</h4>
-
-									<form autocomplete=off>
-										<div class='form-group'>
-											<label class='control-label col-xs-6'>{{ trans('user/event.description') }}</label>
-											<div class='col-xs-6'>
-												<p>текст описания</p>
-											</div>
-										</div>
-										<div class='form-group'>
-											<label class='control-label col-xs-6'>{{ trans('user/event.price') }}</label>
-											<div class='col-xs-6'>
-												<p class='second_2_price'>100</p>
-											</div>
-										</div>
-										<div class='form-group'>
-											<label for='second_2_amount' class='control-label col-xs-6 label__padding-top_6'>{{ trans('user/event.amount') }}</label>
-											<div class='col-xs-6'>
-												<input type='text' class='form-control input__amount' id='second_2_amount' value=0>
-											</div>
-										</div>
-									</form>
-
-									<div class='spacer10'>
-										&nbsp
-									</div>
-								</div>
-
-								<div class='col-sm-4'>
-									<h4 class='about__network__header__block second_3_name'>второе 3</h4>
-
-									<form autocomplete=off>
-										<div class='form-group'>
-											<label class='control-label col-xs-6'>{{ trans('user/event.description') }}</label>
-											<div class='col-xs-6'>
-												<p>текст описания</p>
-											</div>
-										</div>
-										<div class='form-group'>
-											<label class='control-label col-xs-6'>{{ trans('user/event.price') }}</label>
-											<div class='col-xs-6'>
-												<p class='second_3_price'>300</p>
-											</div>
-										</div>
-										<div class='form-group'>
-											<label for='second_3_amount' class='control-label col-xs-6 label__padding-top_6'>{{ trans('user/event.amount') }}</label>
-											<div class='col-xs-6'>
-												<input type='text' class='form-control input__amount' id='second_3_amount' value=0>
-											</div>
-										</div>
-									</form>
-
-									<div class='spacer10'>
-										&nbsp
-									</div>
-								</div>
-							</div>
+							@endif
 						</div>
 					</div>
 
 					<div id="deserts" class="tab-pane fade">
 						<div class='spacer'>
-							<div class='row'>
-								<div class='col-sm-4'>
-									<h4 class='about__network__header__block desert_1_name'>десерт 1</h4>
+							<div class='spacer'>
+								@if($desert->count())
+									<div class='row'>
+									@foreach($desert as $item)
+										<div class='col-sm-4'>
+											<h4 class='about__network__header__block text-center desert_{{ $item->id }}_name'>{{ $item->name }}</h4>
 
-									<form autocomplete=off>
-										<div class='form-group'>
-											<label class='control-label col-xs-6'>{{ trans('user/event.description') }}</label>
-											<div class='col-xs-6'>
-												<p>текст описания</p>
-											</div>
-										</div>
-										<div class='form-group'>
-											<label class='control-label col-xs-6'>{{ trans('user/event.price') }}</label>
-											<div class='col-xs-6'>
-												<p class='desert_1_price'>100</p>
-											</div>
-										</div>
-										<div class='form-group'>
-											<label for='desert_1_amount' class='control-label col-xs-6 label__padding-top_6'>{{ trans('user/event.amount') }}</label>
-											<div class='col-xs-6'>
-												<input type='text' class='form-control input__amount' id='desert_1_amount' value=0>
-											</div>
-										</div>
-									</form>
+											<form autocomplete=off class='form-horizontal'>
+												<div class='form-group'>
+													<label class='control-label col-xs-6'>{{ trans('user/event.description') }}</label>
+													<div class='col-xs-6'>
+														{!! $item->description !!}
+													</div>
+												</div>
+												<div class='form-group'>
+													<label class='control-label col-xs-6'>{{ trans('user/event.price') }}</label>
+													<div class='col-xs-6'>
+														<p class='desert_{{ $item->id }}_price'>{{ $item->price }}</p>
+													</div>
+												</div>
+												<div class='form-group'>
+													<label for='desert_{{ $item->id }}_amount' class='control-label col-xs-6 label__padding-top_6'>{{ trans('user/event.amount') }}</label>
+													<div class='col-xs-6'>
+														<input type='text' class='form-control input__amount' id='desert_{{ $item->id }}_amount' value=0>
+													</div>
+												</div>
+											</form>
 
-									<div class='spacer10'>
-										&nbsp
+											<div class='spacer10'>
+												&nbsp
+											</div>
+										</div>
+									@endforeach
 									</div>
-								</div>
-
-								<div class='col-sm-4'>
-									<h4 class='about__network__header__block desert_2_name'>десерт 2</h4>
-
-									<form autocomplete=off>
-										<div class='form-group'>
-											<label class='control-label col-xs-6'>{{ trans('user/event.description') }}</label>
-											<div class='col-xs-6'>
-												<p>текст описания</p>
-											</div>
+								@else
+									<div class='row'>
+										<div class='col-sm-3 hidden-xs'>
 										</div>
-										<div class='form-group'>
-											<label class='control-label col-xs-6'>{{ trans('user/event.price') }}</label>
-											<div class='col-xs-6'>
-												<p class='desert_2_price'>100</p>
-											</div>
+										<div class='col-sm-6'>
+											<p>{{ trans('user/menu.no_item') }}</p>
 										</div>
-										<div class='form-group'>
-											<label for='desert_2_amount' class='control-label col-xs-6 label__padding-top_6'>{{ trans('user/event.amount') }}</label>
-											<div class='col-xs-6'>
-												<input type='text' class='form-control input__amount' id='desert_2_amount' value=0>
-											</div>
-										</div>
-									</form>
-
-									<div class='spacer10'>
-										&nbsp
 									</div>
-								</div>
-
-								<div class='col-sm-4'>
-									<h4 class='about__network__header__block desert_3_name'>десерт 3</h4>
-
-									<form autocomplete=off>
-										<div class='form-group'>
-											<label class='control-label col-xs-6'>{{ trans('user/event.description') }}</label>
-											<div class='col-xs-6'>
-												<p>текст описания</p>
-											</div>
-										</div>
-										<div class='form-group'>
-											<label class='control-label col-xs-6'>{{ trans('user/event.price') }}</label>
-											<div class='col-xs-6'>
-												<p class='desert_3_price'>300</p>
-											</div>
-										</div>
-										<div class='form-group'>
-											<label for='desert_3_amount' class='control-label col-xs-6 label__padding-top_6'>{{ trans('user/event.amount') }}</label>
-											<div class='col-xs-6'>
-												<input type='text' class='form-control input__amount' id='desert_3_amount' value=0>
-											</div>
-										</div>
-									</form>
-
-									<div class='spacer10'>
-										&nbsp
-									</div>
-								</div>
+								@endif
 							</div>
 						</div>
 					</div>
 
 					<div id="drinks" class="tab-pane fade">
 						<div class='spacer'>
-							<div class='row'>
-								<div class='col-sm-4'>
-									<h4 class='about__network__header__block drink_1_name'>напиток 1</h4>
+							@if($drink->count())
+								<div class='row'>
+								@foreach($drink as $item)
+									<div class='col-sm-4'>
+										<h4 class='about__network__header__block text-center drink_{{ $item->id }}_name'>{{ $item->name }}</h4>
 
-									<form autocomplete=off>
-										<div class='form-group'>
-											<label class='control-label col-xs-6'>{{ trans('user/event.description') }}</label>
-											<div class='col-xs-6'>
-												<p>текст описания</p>
+										<form autocomplete=off class='form-horizontal'>
+											<div class='form-group'>
+												<label class='control-label col-xs-6'>{{ trans('user/event.description') }}</label>
+												<div class='col-xs-6'>
+													{!! $item->description !!}
+												</div>
 											</div>
-										</div>
-										<div class='form-group'>
-											<label class='control-label col-xs-6'>{{ trans('user/event.price') }}</label>
-											<div class='col-xs-6'>
-												<p class='drink_1_price'>100</p>
+											<div class='form-group'>
+												<label class='control-label col-xs-6'>{{ trans('user/event.price') }}</label>
+												<div class='col-xs-6'>
+													<p class='drink_{{ $item->id }}_price'>{{ $item->price }}</p>
+												</div>
 											</div>
-										</div>
-										<div class='form-group'>
-											<label for='drink_1_amount' class='control-label col-xs-6 label__padding-top_6'>{{ trans('user/event.amount') }}</label>
-											<div class='col-xs-6'>
-												<input type='text' class='form-control input__amount' id='drink_1_amount' value=0>
+											<div class='form-group'>
+												<label for='drink_{{ $item->id }}_amount' class='control-label col-xs-6 label__padding-top_6'>{{ trans('user/event.amount') }}</label>
+												<div class='col-xs-6'>
+													<input type='text' class='form-control input__amount' id='drink_{{ $item->id }}_amount' value=0>
+												</div>
 											</div>
-										</div>
-									</form>
+										</form>
 
-									<div class='spacer10'>
-										&nbsp
+										<div class='spacer10'>
+											&nbsp
+										</div>
+									</div>
+								@endforeach
+								</div>
+							@else
+								<div class='row'>
+									<div class='col-sm-3 hidden-xs'>
+									</div>
+									<div class='col-sm-6'>
+										<p>{{ trans('user/menu.no_item') }}</p>
 									</div>
 								</div>
-
-								<div class='col-sm-4'>
-									<h4 class='about__network__header__block drink_2_name'>напиток 2</h4>
-
-									<form autocomplete=off>
-										<div class='form-group'>
-											<label class='control-label col-xs-6'>{{ trans('user/event.description') }}</label>
-											<div class='col-xs-6'>
-												<p>текст описания</p>
-											</div>
-										</div>
-										<div class='form-group'>
-											<label class='control-label col-xs-6'>{{ trans('user/event.price') }}</label>
-											<div class='col-xs-6'>
-												<p class='drink_2_price'>100</p>
-											</div>
-										</div>
-										<div class='form-group'>
-											<label for='drink_2_amount' class='control-label col-xs-6 label__padding-top_6'>{{ trans('user/event.amount') }}</label>
-											<div class='col-xs-6'>
-												<input type='text' class='form-control input__amount' id='drink_2_amount' value=0>
-											</div>
-										</div>
-									</form>
-
-									<div class='spacer10'>
-										&nbsp
-									</div>
-								</div>
-
-								<div class='col-sm-4'>
-									<h4 class='about__network__header__block drink_3_name'>напиток 3</h4>
-
-									<form autocomplete=off>
-										<div class='form-group'>
-											<label class='control-label col-xs-6'>{{ trans('user/event.description') }}</label>
-											<div class='col-xs-6'>
-												<p>текст описания</p>
-											</div>
-										</div>
-										<div class='form-group'>
-											<label class='control-label col-xs-6'>{{ trans('user/event.price') }}</label>
-											<div class='col-xs-6'>
-												<p class='drink_3_price'>300</p>
-											</div>
-										</div>
-										<div class='form-group'>
-											<label for='drink_3_amount' class='control-label col-xs-6 label__padding-top_6'>{{ trans('user/event.amount') }}</label>
-											<div class='col-xs-6'>
-												<input type='text' class='form-control input__amount' id='drink_3_amount' value=0>
-											</div>
-										</div>
-									</form>
-
-									<div class='spacer10'>
-										&nbsp
-									</div>
-								</div>
-							</div>
+							@endif
 						</div>
 					</div>
 				</div>
@@ -438,6 +256,7 @@
 		var temp = 0;
 		var final_price = 0;
 		var bill = [];
+		var final_bill = [];
 
 		function insert_to_bill_table(item)
 		{
@@ -545,19 +364,33 @@
 						$('#' + id + '_row').remove();
 					}
 				} else {
-					bill[id] = {
+					var item = {
 						'id': id,
 						'name': $('.' + id + '_name').text(),
 						'amount': temp,
 						'price': parseInt($('.' + id + '_price').text())
-					};
-					insert_to_bill_table(bill[id]);
+					} 
+					bill.push(item);
+					insert_to_bill_table(item);
 				}
 				// console.log(temp);
 				// console.log(final_price);
 				// console.log(final_price);
 				update_final_price();
 			});
+		});
+
+		$('#submit_bill').click(function(){
+			final_bill = [];
+			for ( i = 0; i < bill.length; i++ ) {
+				final_bill[i] = {
+					'id': bill[i]['id'],
+					'name': $('.' + bill[i]['id'] + '_name').text(),
+					'amount': bill[i]['amount'],
+					'price': parseInt($('.' + bill[i]['id'] + '_price').text())
+				};
+				final_bill[i]['total'] = final_bill[i]['amount'] * final_bill[i]['price'];
+			}
 		});
 	</script>
 @endsection

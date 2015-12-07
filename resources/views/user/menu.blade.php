@@ -54,7 +54,7 @@
 									<div class='col-sm-4'>
 										<h4 class='about__network__header__block text-center first_{{ $item->id }}_name'>{{ $item->name }}</h4>
 
-										<form autocomplete=off>
+										<form autocomplete=off class='form-horizontal'>
 											<div class='form-group'>
 												<label class='control-label col-xs-6'>{{ trans('user/event.description') }}</label>
 												<div class='col-xs-6'>
@@ -65,12 +65,6 @@
 												<label class='control-label col-xs-6'>{{ trans('user/event.price') }}</label>
 												<div class='col-xs-6'>
 													<p class='first_{{ $item->id }}_price'>{{ $item->price }}</p>
-												</div>
-											</div>
-											<div class='form-group'>
-												<label for='first_{{ $item->id }}_amount' class='control-label col-xs-6 label__padding-top_6'>{{ trans('user/event.amount') }}</label>
-												<div class='col-xs-6'>
-													<input type='text' class='form-control input__amount' id='first_{{ $item->id }}_amount' value=0>
 												</div>
 											</div>
 										</form>
@@ -101,7 +95,7 @@
 									<div class='col-sm-4'>
 										<h4 class='about__network__header__block text-center second_{{ $item->id }}_name'>{{ $item->name }}</h4>
 
-										<form autocomplete=off>
+										<form autocomplete=off class='form-horizontal'>
 											<div class='form-group'>
 												<label class='control-label col-xs-6'>{{ trans('user/event.description') }}</label>
 												<div class='col-xs-6'>
@@ -112,12 +106,6 @@
 												<label class='control-label col-xs-6'>{{ trans('user/event.price') }}</label>
 												<div class='col-xs-6'>
 													<p class='second_{{ $item->id }}_price'>{{ $item->price }}</p>
-												</div>
-											</div>
-											<div class='form-group'>
-												<label for='second_{{ $item->id }}_amount' class='control-label col-xs-6 label__padding-top_6'>{{ trans('user/event.amount') }}</label>
-												<div class='col-xs-6'>
-													<input type='text' class='form-control input__amount' id='second_{{ $item->id }}_amount' value=0>
 												</div>
 											</div>
 										</form>
@@ -149,7 +137,7 @@
 										<div class='col-sm-4'>
 											<h4 class='about__network__header__block text-center desert_{{ $item->id }}_name'>{{ $item->name }}</h4>
 
-											<form autocomplete=off>
+											<form autocomplete=off class='form-horizontal'>
 												<div class='form-group'>
 													<label class='control-label col-xs-6'>{{ trans('user/event.description') }}</label>
 													<div class='col-xs-6'>
@@ -160,12 +148,6 @@
 													<label class='control-label col-xs-6'>{{ trans('user/event.price') }}</label>
 													<div class='col-xs-6'>
 														<p class='desert_{{ $item->id }}_price'>{{ $item->price }}</p>
-													</div>
-												</div>
-												<div class='form-group'>
-													<label for='desert_{{ $item->id }}_amount' class='control-label col-xs-6 label__padding-top_6'>{{ trans('user/event.amount') }}</label>
-													<div class='col-xs-6'>
-														<input type='text' class='form-control input__amount' id='desert_{{ $item->id }}_amount' value=0>
 													</div>
 												</div>
 											</form>
@@ -197,7 +179,7 @@
 									<div class='col-sm-4'>
 										<h4 class='about__network__header__block text-center drink_{{ $item->id }}_name'>{{ $item->name }}</h4>
 
-										<form autocomplete=off>
+										<form autocomplete=off class='form-horizontal'>
 											<div class='form-group'>
 												<label class='control-label col-xs-6'>{{ trans('user/event.description') }}</label>
 												<div class='col-xs-6'>
@@ -208,12 +190,6 @@
 												<label class='control-label col-xs-6'>{{ trans('user/event.price') }}</label>
 												<div class='col-xs-6'>
 													<p class='drink_{{ $item->id }}_price'>{{ $item->price }}</p>
-												</div>
-											</div>
-											<div class='form-group'>
-												<label for='drink_{{ $item->id }}_amount' class='control-label col-xs-6 label__padding-top_6'>{{ trans('user/event.amount') }}</label>
-												<div class='col-xs-6'>
-													<input type='text' class='form-control input__amount' id='drink_{{ $item->id }}_amount' value=0>
 												</div>
 											</div>
 										</form>

@@ -89,7 +89,18 @@ class User extends Controller
 
 	function event()
 	{
-		return view('user/event');
+		$first = Dish::where('category', 'first')->get();
+		$second = Dish::where('category', 'second')->get();
+		$desert = Dish::where('category', 'desert')->get();
+		$drink = Dish::where('category', 'drink')->get();
+		return view('user/event',
+			[
+				'first' => $first,
+				'second' => $second,
+				'desert' => $desert,
+				'drink' => $drink
+			]
+		);
 	}
 
 	function map()
