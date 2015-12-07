@@ -11,18 +11,22 @@
 |
 */
 
-Route::get('sas', function(){
-	Auth::logout();
-	return Request::path();
-});
+// Route::get('sas', function(){
+// 	Auth::logout();
+// 	return Request::path();
+// });
 
-Route::get('qwe', function(){
-	return var_export(config('database.connections'),1);
-	return config('app.locale');
-});
+// Route::get('qwe', function(){
+// 	return var_export(config('database.connections'),1);
+// 	return config('app.locale');
+// });
 
 Route::get('welcome', function () {
     return view('welcome');
+});
+
+Route::group(['prefix' => 'ajax'] ,function(){
+	Route::post('/event', 'Ajax@event');
 });
 
 // Route::get('/', 'User@index')->name('home');
@@ -90,7 +94,13 @@ Route::group(['prefix' => 'admin'], function(){
 		Route::post('/network', 'Admin@network');
 
 		Route::get('/menu', 'Admin@menu');
-		Route::post('/menu', 'Admin@menu');		
+		Route::post('/menu', 'Admin@menu');
+
+		Route::bind('event', function($value) {
+		    return App\Event::withTrashed()->where('id', $value)->first();
+		});
+		Route::get('/event/', 'Admin@event');
+		Route::get('/event/{event}', 'Admin@event_detail');
 	});
 });
 

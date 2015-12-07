@@ -8,9 +8,9 @@
 		<div class='col-xs-12 col-sm-3'>
 			<form class='form-horizontal'>
 				<div class='form-group'>
-					<label class='control-label col-xs-12 label__contact'>{{ trans('user/event.contact') }}</label>
+					<label for='contact' class='control-label col-xs-12 label__contact'>{{ trans('user/event.contact') }}</label>
 					<div class='col-xs-12'>
-						<textarea class='form-control'></textarea>
+						<textarea id='contact' name='contact' class='form-control'></textarea>
 					</div>
 				</div>
 
@@ -252,6 +252,7 @@
 		</div>
 	</div>
 
+	{{ csrf_field() }}
 	<script>
 		var temp = 0;
 		var final_price = 0;
@@ -358,9 +359,12 @@
 				if ( isNaN(temp) ) {
 					temp = 0;
 				}
+				var found = $.grep(bill, function(e){ return e.id == id })[0];
 				if ( temp == 0 ) {
-					if ( bill[id] ) {
-						delete bill[id]
+					if ( found ) {
+						var index = bill.indexOf(found);
+						//delete bill[index];
+						bill.splice(index,1);
 						$('#' + id + '_row').remove();
 					}
 				} else {
@@ -369,8 +373,13 @@
 						'name': $('.' + id + '_name').text(),
 						'amount': temp,
 						'price': parseInt($('.' + id + '_price').text())
-					} 
-					bill.push(item);
+					}
+					if (found) {
+						var index = bill.indexOf(found);
+						bill[index] = item;
+					} else {
+						bill.push(item);
+					}
 					insert_to_bill_table(item);
 				}
 				// console.log(temp);
@@ -391,6 +400,21 @@
 				};
 				final_bill[i]['total'] = final_bill[i]['amount'] * final_bill[i]['price'];
 			}
+
+			$.ajax({
+				type: 'post',
+				cache: false,
+				headers: { 'X-CSRF-TOKEN' : $('input[name="_token"').val() },
+				url: '/ajax/event',
+				data: {
+					contact: $('#contact').val(),
+					bill: final_bill,
+					total: $('.final__price').text()
+				},
+				success: function(data) {
+					alert(data);
+				}
+			});
 		});
 	</script>
 @endsection

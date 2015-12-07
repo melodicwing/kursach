@@ -18,7 +18,7 @@ class AdminLogin
 		if ( \Auth::check() ) {
 			return $next($request);
 		} else {
-			return redirect('/admin/login');
+			return redirect()->guest('/admin/login');
 		}
 	}
 }

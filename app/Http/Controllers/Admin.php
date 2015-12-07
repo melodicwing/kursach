@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use \App\News;
 use \App\Restauraunt;
 use \App\Dish;
+use \App\Event;
 
 class Admin extends Controller
 {
@@ -34,7 +35,8 @@ class Admin extends Controller
 	public function get_login()
 	{
 		if ( \Auth::check() ) {
-			return redirect('/admin');
+			//return redirect('/admin');
+			return redirect()->intended('/admin');
 		}
 		return view('admin/login');
 	}
@@ -126,5 +128,21 @@ class Admin extends Controller
 				'drink' => $drink
 			]
 		);
+	}
+
+	function event(Request $request)
+	{
+		$item = Event::find($request->input('check'));
+		if ( $item ) {
+			$item->delete();
+		}
+		$events = Event::withTrashed()->orderBy('deleted_at', 'desc')->paginate(9);
+		// dd($events[0]->bill);
+		return view('admin/event', [ 'events' => $events ]);
+	}
+
+	function event_detail($event)
+	{
+		return view('admin/event_detail', [ 'event' => $event ]);
 	}
 }

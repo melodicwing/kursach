@@ -5,3 +5,16 @@ img {
 .spacer {
 	margin-top: 20px;
 }
+
+.event__done {
+	background-color: #f3f3f3;
+	border: 1px solid #ddd;
+}
+
+.bill {
+	margin-bottom: 0px !important;
+}
+
+.bill td, .bill th {
+	text-align: center;
+}
