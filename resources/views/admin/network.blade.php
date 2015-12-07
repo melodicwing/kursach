@@ -96,7 +96,7 @@
 			$('[data-toggle="tooltip"]').tooltip();
 
 			$('.edit_link').click(function(){
-				var id = current_id = $(this).data('id');
+				var id = $(this).data('id');
 				$('#type_input').val('update');
 				$('#record_id').val(id);
 				$('#type_header').text('Редактирование записи');

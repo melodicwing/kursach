@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use \App\News;
 use \App\Restauraunt;
+use \App\Dish;
 
 class Admin extends Controller
 {
@@ -89,5 +90,41 @@ class Admin extends Controller
 		}
 		$rests = Restauraunt::orderBy('created_at', 'DESC')->paginate(9);
 		return view('admin/network', [ 'rests' => $rests ]);
+	}
+
+	public function menu(Request $request) {
+		if ( $request->isMethod('POST') ) {
+			switch ( $request->input('type') ) {
+				case 'insert':
+					Dish::create($request->all());
+					break;
+				case 'update':
+					Dish::find( $request->input('id') )->update([
+						'category' => $request->input('category'),
+						'name' => $request->input('name'),
+						'description' => $request->input('description'),
+						'price' => $request->input('price'),
+					]);
+					break;
+			}
+		}
+		if ( $request->isMethod('GET') ) {
+			$item = Dish::find($request->input('remove'));
+			if ( $item ) {
+				$item->delete();
+			}
+		}
+		$first = Dish::where('category', 'first')->get();
+		$second = Dish::where('category', 'second')->get();
+		$desert = Dish::where('category', 'desert')->get();
+		$drink = Dish::where('category', 'drink')->get();
+		return view('admin/menu',
+			[
+				'first' => $first,
+				'second' => $second,
+				'desert' => $desert,
+				'drink' => $drink
+			]
+		);
 	}
 }

@@ -88,6 +88,9 @@ Route::group(['prefix' => 'admin'], function(){
 
 		Route::get('/network', 'Admin@network');
 		Route::post('/network', 'Admin@network');
+
+		Route::get('/menu', 'Admin@menu');
+		Route::post('/menu', 'Admin@menu');		
 	});
 });
 

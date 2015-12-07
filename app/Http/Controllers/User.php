@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\News;
 use \App\Restauraunt;
+use App\Dish;
 
 class User extends Controller
 {
@@ -67,7 +68,18 @@ class User extends Controller
 
 	function menu()
 	{
-		return view('user/menu');
+		$first = Dish::where('category', 'first')->get();
+		$second = Dish::where('category', 'second')->get();
+		$desert = Dish::where('category', 'desert')->get();
+		$drink = Dish::where('category', 'drink')->get();
+		return view('user/menu',
+			[
+				'first' => $first,
+				'second' => $second,
+				'desert' => $desert,
+				'drink' => $drink
+			]
+		);
 	}
 
 	function table()

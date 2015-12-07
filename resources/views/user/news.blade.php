@@ -32,11 +32,11 @@
 		</div>
 	@else
 		<div class='row'>
-				<div class='col-sm-3 hidden-xs'>
-				</div>
-				<div class='col-sm-6'>
-					<p>{{ trans('user/news.no_news') }}</p>
-				</div>
+			<div class='col-sm-3 hidden-xs'>
 			</div>
+			<div class='col-sm-6'>
+				<p>{{ trans('user/news.no_news') }}</p>
+			</div>
+		</div>
 	@endif
 @endsection

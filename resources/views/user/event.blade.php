@@ -6,46 +6,46 @@
 	<div class='row'>
 
 		<div class='col-xs-12 col-sm-3'>
-					<form class='form-horizontal'>
-						<div class='form-group'>
-							<label class='control-label col-xs-12 label__contact'>{{ trans('user/event.contact') }}</label>
-							<div class='col-xs-12'>
-								<textarea class='form-control'></textarea>
-							</div>
-						</div>
+			<form class='form-horizontal'>
+				<div class='form-group'>
+					<label class='control-label col-xs-12 label__contact'>{{ trans('user/event.contact') }}</label>
+					<div class='col-xs-12'>
+						<textarea class='form-control'></textarea>
+					</div>
+				</div>
 
-						<div class='form-group'>
-							<label class='control-label col-xs-12 label__contact'>{{ trans('user/event.bill') }}</label>
-						</div>
-						<table class='table table-condensed bill'>
-							<tr>
-								<th></th>
-								<th>{{ trans('user/event.bill_name') }}</th>
-								<th>{{ trans('user/event.bill_amount') }}</th>
-								<th>&nbsp</th>
-								<th>{{ trans('user/event.bill_price') }}</th>
-								<th>&nbsp</th>
-								<th>{{ trans('user/event.bill_cost') }}</th>
-							</tr>
-						</table>
+				<div class='form-group'>
+					<label class='control-label col-xs-12 label__contact'>{{ trans('user/event.bill') }}</label>
+				</div>
+				<table class='table table-condensed bill'>
+					<tr>
+						<th></th>
+						<th>{{ trans('user/event.bill_name') }}</th>
+						<th>{{ trans('user/event.bill_amount') }}</th>
+						<th>&nbsp</th>
+						<th>{{ trans('user/event.bill_price') }}</th>
+						<th>&nbsp</th>
+						<th>{{ trans('user/event.bill_cost') }}</th>
+					</tr>
+				</table>
 
-						<table class='table'>
-							<tr>
-								<td class='final__price__label'>
-									<label class='label__final__price'>{{ trans('user/event.final_price') }}</label>
-								</td>
-								<td class='final__price__value'>
-									<p class='final__price'>0</p>
-								</td>
-							</tr>
-						</table>
+				<table class='table'>
+					<tr>
+						<td class='final__price__label'>
+							<label class='label__final__price'>{{ trans('user/event.final_price') }}</label>
+						</td>
+						<td class='final__price__value'>
+							<p class='final__price'>0</p>
+						</td>
+					</tr>
+				</table>
 
-						<div class='form-group'>
-							<div class='col-xs-12'>
-								<input type='submit' class='form-control my__form' value='{{ trans('user/event.submit') }}'>
-							</div>
-						</div>
-					</form>
+				<div class='form-group'>
+					<div class='col-xs-12'>
+						<input type='submit' class='form-control my__form' value='{{ trans('user/event.submit') }}'>
+					</div>
+				</div>
+			</form>
 		</div>
 
 		<div class='col-xs-12 col-sm-9'>

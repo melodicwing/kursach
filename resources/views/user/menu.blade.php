@@ -35,89 +35,207 @@
 		</div>
 	</div>
 
-	<div class='row spacer mymenu'>
-		<ul class="nav nav-tabs nav-justified">
-			<li class="active"><a data-toggle="tab" href="#first">{{ trans('user/menu.first') }}</a></li>
-			<li><a data-toggle="tab" href="#second">{{ trans('user/menu.second') }}</a></li>
-			<li><a data-toggle="tab" href="#deserts">{{ trans('user/menu.deserts') }}</a></li>
-			<li><a data-toggle="tab" href="#drinks">{{ trans('user/menu.drinks') }}</a></li>
-		</ul>
+	<div class='row spacer'>
+		<div class='col-xs-12'>
+			<div class='mymenu'>
+				<ul class="nav nav-tabs nav-justified">
+					<li class="active"><a data-toggle="tab" href="#first">{{ trans('user/menu.first') }}</a></li>
+					<li><a data-toggle="tab" href="#second">{{ trans('user/menu.second') }}</a></li>
+					<li><a data-toggle="tab" href="#deserts">{{ trans('user/menu.deserts') }}</a></li>
+					<li><a data-toggle="tab" href="#drinks">{{ trans('user/menu.drinks') }}</a></li>
+				</ul>
 
-		<div class="tab-content">
-			<div id="first" class="tab-pane fade in active">
-				<div class='container spacer'>
-					<div class='col-sm-4'>
-						<h4 class='about__network__header__block'>Ресторан1</h4>
-						<img class='about__img' src='../img/bar-828768_1920.jpg'>
+				<div class="tab-content">
+					<div id="first" class="tab-pane fade in active">
+						<div class='spacer'>
+							@if($first->count())
+								<div class='row'>
+								@foreach($first as $item)
+									<div class='col-sm-4'>
+										<h4 class='about__network__header__block text-center first_{{ $item->id }}_name'>{{ $item->name }}</h4>
 
-						<p></p>
+										<form autocomplete=off>
+											<div class='form-group'>
+												<label class='control-label col-xs-6'>{{ trans('user/event.description') }}</label>
+												<div class='col-xs-6'>
+													{!! $item->description !!}
+												</div>
+											</div>
+											<div class='form-group'>
+												<label class='control-label col-xs-6'>{{ trans('user/event.price') }}</label>
+												<div class='col-xs-6'>
+													<p class='first_{{ $item->id }}_price'>{{ $item->price }}</p>
+												</div>
+											</div>
+											<div class='form-group'>
+												<label for='first_{{ $item->id }}_amount' class='control-label col-xs-6 label__padding-top_6'>{{ trans('user/event.amount') }}</label>
+												<div class='col-xs-6'>
+													<input type='text' class='form-control input__amount' id='first_{{ $item->id }}_amount' value=0>
+												</div>
+											</div>
+										</form>
 
-
-						<address>
-							<strong>Twitter, Inc.</strong><br>
-							1355 Market Street, Suite 900<br>
-							San Francisco, CA 94103<br>
-							<abbr title="Phone">P:</abbr> (123) 456-7890<br>
-							<a href='https://maps.yandex.ru'>Посмотреть на карте</a>
-						</address>
-
-						<div class='hidden-xs spacer10'>
-							&nbsp
+										<div class='spacer10'>
+											&nbsp
+										</div>
+									</div>
+								@endforeach
+								</div>
+							@else
+								<div class='row'>
+									<div class='col-sm-3 hidden-xs'>
+									</div>
+									<div class='col-sm-6'>
+										<p>{{ trans('user/menu.no_item') }}</p>
+									</div>
+								</div>
+							@endif
 						</div>
 					</div>
 
-					<div class='col-sm-4'>
-						<h4 class='about__network__header__block'>Ресторан1</h4>
-						<img class='about__img' src='../img/bar-828768_1920.jpg'>
+					<div id="second" class="tab-pane fade">
+						<div class='spacer'>
+							@if($second->count())
+								<div class='row'>
+								@foreach($second as $item)
+									<div class='col-sm-4'>
+										<h4 class='about__network__header__block text-center second_{{ $item->id }}_name'>{{ $item->name }}</h4>
 
-						<p></p>
+										<form autocomplete=off>
+											<div class='form-group'>
+												<label class='control-label col-xs-6'>{{ trans('user/event.description') }}</label>
+												<div class='col-xs-6'>
+													{!! $item->description !!}
+												</div>
+											</div>
+											<div class='form-group'>
+												<label class='control-label col-xs-6'>{{ trans('user/event.price') }}</label>
+												<div class='col-xs-6'>
+													<p class='second_{{ $item->id }}_price'>{{ $item->price }}</p>
+												</div>
+											</div>
+											<div class='form-group'>
+												<label for='second_{{ $item->id }}_amount' class='control-label col-xs-6 label__padding-top_6'>{{ trans('user/event.amount') }}</label>
+												<div class='col-xs-6'>
+													<input type='text' class='form-control input__amount' id='second_{{ $item->id }}_amount' value=0>
+												</div>
+											</div>
+										</form>
 
-
-						<address>
-							<strong>Twitter, Inc.</strong><br>
-							1355 Market Street, Suite 900<br>
-							San Francisco, CA 94103<br>
-							<abbr title="Phone">P:</abbr> (123) 456-7890<br>
-							<a href='https://maps.yandex.ru'>Посмотреть на карте</a>
-						</address>
-
-						<div class='hidden-xs spacer10'>
-							&nbsp
+										<div class='spacer10'>
+											&nbsp
+										</div>
+									</div>
+								@endforeach
+								</div>
+							@else
+								<div class='row'>
+									<div class='col-sm-3 hidden-xs'>
+									</div>
+									<div class='col-sm-6'>
+										<p>{{ trans('user/menu.no_item') }}</p>
+									</div>
+								</div>
+							@endif
 						</div>
 					</div>
 
-					<div class='col-sm-4'>
-						<h4 class='about__network__header__block'>Ресторан1</h4>
-						<img class='about__img' src='../img/bar-828768_1920.jpg'>
+					<div id="deserts" class="tab-pane fade">
+						<div class='spacer'>
+							<div class='spacer'>
+								@if($desert->count())
+									<div class='row'>
+									@foreach($desert as $item)
+										<div class='col-sm-4'>
+											<h4 class='about__network__header__block text-center desert_{{ $item->id }}_name'>{{ $item->name }}</h4>
 
-						<p></p>
+											<form autocomplete=off>
+												<div class='form-group'>
+													<label class='control-label col-xs-6'>{{ trans('user/event.description') }}</label>
+													<div class='col-xs-6'>
+														{!! $item->description !!}
+													</div>
+												</div>
+												<div class='form-group'>
+													<label class='control-label col-xs-6'>{{ trans('user/event.price') }}</label>
+													<div class='col-xs-6'>
+														<p class='desert_{{ $item->id }}_price'>{{ $item->price }}</p>
+													</div>
+												</div>
+												<div class='form-group'>
+													<label for='desert_{{ $item->id }}_amount' class='control-label col-xs-6 label__padding-top_6'>{{ trans('user/event.amount') }}</label>
+													<div class='col-xs-6'>
+														<input type='text' class='form-control input__amount' id='desert_{{ $item->id }}_amount' value=0>
+													</div>
+												</div>
+											</form>
 
+											<div class='spacer10'>
+												&nbsp
+											</div>
+										</div>
+									@endforeach
+									</div>
+								@else
+									<div class='row'>
+										<div class='col-sm-3 hidden-xs'>
+										</div>
+										<div class='col-sm-6'>
+											<p>{{ trans('user/menu.no_item') }}</p>
+										</div>
+									</div>
+								@endif
+							</div>
+						</div>
+					</div>
 
-						<address>
-							<strong>Twitter, Inc.</strong><br>
-							1355 Market Street, Suite 900<br>
-							San Francisco, CA 94103<br>
-							<abbr title="Phone">P:</abbr> (123) 456-7890<br>
-							<a href='https://maps.yandex.ru'>Посмотреть на карте</a>
-						</address>
+					<div id="drinks" class="tab-pane fade">
+						<div class='spacer'>
+							@if($drink->count())
+								<div class='row'>
+								@foreach($drink as $item)
+									<div class='col-sm-4'>
+										<h4 class='about__network__header__block text-center drink_{{ $item->id }}_name'>{{ $item->name }}</h4>
 
-						<div class='hidden-xs spacer10'>
-							&nbsp
+										<form autocomplete=off>
+											<div class='form-group'>
+												<label class='control-label col-xs-6'>{{ trans('user/event.description') }}</label>
+												<div class='col-xs-6'>
+													{!! $item->description !!}
+												</div>
+											</div>
+											<div class='form-group'>
+												<label class='control-label col-xs-6'>{{ trans('user/event.price') }}</label>
+												<div class='col-xs-6'>
+													<p class='drink_{{ $item->id }}_price'>{{ $item->price }}</p>
+												</div>
+											</div>
+											<div class='form-group'>
+												<label for='drink_{{ $item->id }}_amount' class='control-label col-xs-6 label__padding-top_6'>{{ trans('user/event.amount') }}</label>
+												<div class='col-xs-6'>
+													<input type='text' class='form-control input__amount' id='drink_{{ $item->id }}_amount' value=0>
+												</div>
+											</div>
+										</form>
+
+										<div class='spacer10'>
+											&nbsp
+										</div>
+									</div>
+								@endforeach
+								</div>
+							@else
+								<div class='row'>
+									<div class='col-sm-3 hidden-xs'>
+									</div>
+									<div class='col-sm-6'>
+										<p>{{ trans('user/menu.no_item') }}</p>
+									</div>
+								</div>
+							@endif
 						</div>
 					</div>
 				</div>
-			</div>
-			<div id="second" class="tab-pane fade">
-				<h3>Menu 1</h3>
-				<p>Some content in menu 1.</p>
-			</div>
-			<div id="deserts" class="tab-pane fade">
-				<h3>Menu 2</h3>
-				<p>Some content in menu 2.</p>
-			</div>
-			<div id="drinks" class="tab-pane fade">
-				<h3>Menu 2</h3>
-				<p>Some content in menu 2.</p>
 			</div>
 		</div>
 	</div>
