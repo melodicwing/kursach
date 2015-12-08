@@ -2,4 +2,4 @@
 
 @section('title', trans('user/template.map') )
 
-@section('content')<p>литавры</p>@endsection
+@section('content')<p>сибирь</p>@endsection

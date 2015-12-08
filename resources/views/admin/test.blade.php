@@ -10,7 +10,7 @@
 		</form>
 	</div>
 
-	<textarea id='editor' name='editor'></textarea>
+	<textarea id='editor' name='editor'>{!! $content !!}</textarea>
 
 	<p></p>
 

@@ -177,14 +177,18 @@ class Admin extends Controller
 
 	function test(Request $request)
 	{
+		$content = \Storage::get('resources/views/user/test.blade.php');
+		// dd($content);
 		if ( $request->isMethod('POST') ) {
 			// dd($request->all());
 			$pattern = '/(@section\(\'content\'\))(.*)(@endsection)/s';
 			$replace = '${1}'.$request->input('content').'${3}';
-			$text = \Storage::get('resources/views/user/test.blade.php');
-			$new_content = preg_replace( $pattern, $replace, $text );
-			\Storage::put('resources/views/user/test.blade.php', $new_content);
+			$content = preg_replace( $pattern, $replace, $content );
+			\Storage::put('resources/views/user/test.blade.php', $content);
 		}
-		return view('admin/test');
+		$pattern = '/(@section\(\'content\'\))(?P<content>.*)(@endsection)/s';
+		preg_match($pattern, $content, $matches);
+		// dd($matches);
+		return view('admin/test', [ 'content' => $matches['content'] ]);
 	}
 }
