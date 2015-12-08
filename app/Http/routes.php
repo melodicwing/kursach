@@ -101,7 +101,9 @@ Route::group(['prefix' => 'admin'], function(){
 
 		Route::get('/guestbook', 'Admin@guestbook');
 
-		Route::get('/table', 'Admin@table');
+		Route::get('/table/', 'Admin@table');
+		Route::model('table', 'App\Table');
+		Route::get('/table/{table}', 'Admin@table_detail');
 	});
 });
 

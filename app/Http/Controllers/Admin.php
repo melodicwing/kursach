@@ -164,9 +164,14 @@ class Admin extends Controller
 		return view('admin/guestbook', [ 'comments' => $comments ]);
 	}
 
-	function table($event)
+	function table()
 	{
-		$tables = Table::all();
+		$tables = Table::orderBy('from', 'desc')->orderBy('to', 'desc')->orderBy('table', 'asc')->get();
 		return view('admin/table', [ 'tables' => $tables ]);
+	}
+
+	function table_detail($table)
+	{
+		return view('admin/table_detail', [ 'table' => $table ]);
 	}
 }

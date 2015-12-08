@@ -11,9 +11,10 @@ class Table extends Model
     public static function insert($input)
     {
     	// dd($input);
-    	$date = date('Y-m-d',strtotime($input['date']));
-    	$from = $date.' '.$input['from_h'].':'.$input['from_m'];
-    	$to = $date.' '.$input['to_h'].':'.$input['to_m'];
+    	$date_from = date('Y-m-d',strtotime($input['date_from']));
+    	$date_to = date('Y-m-d',strtotime($input['date_to']));
+    	$from = $date_from.' '.$input['from_h'].':'.$input['from_m'];
+    	$to = $date_to.' '.$input['to_h'].':'.$input['to_m'];
     	$cond1 = Table::where('from', '<=', $to)
     				->where('to', '>=', $to)
     				->where('table', $input['table']);

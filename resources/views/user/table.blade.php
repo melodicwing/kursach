@@ -8,7 +8,7 @@
 			<form method='post' action='/ajax/table' id='form'>
 				<div class='form-group'>
 					<label for='input__date_from'>{{ trans('user/table.date_from') }}</label>
-					<input type='date' class='form-control' id='input__date_from' name='date'>
+					<input type='date' class='form-control' id='input__date_from' name='date_from'>
 				</div>
 
 				<div class='form-group'>
@@ -73,7 +73,7 @@
 
 				<div class='form-group'>
 					<label for='input__date_to'>{{ trans('user/table.date_to') }}</label>
-					<input type='date' class='form-control' id='input__date_to' name='date'>
+					<input type='date' class='form-control' id='input__date_to' name='date_to'>
 				</div>
 
 				<div class='form-group'>
