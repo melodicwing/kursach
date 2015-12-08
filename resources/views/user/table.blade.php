@@ -5,10 +5,10 @@
 @section('content')
 	<div class='row'>
 		<div class='col-xs-12 col-sm-4 col-sm-push-8'>
-			<form>
+			<form method='post' action='/ajax/table' id='form'>
 				<div class='form-group'>
-					<label for='input__date'>{{ trans('user/table.date') }}</label>
-					<input type='date' class='form-control' id='input__date'>
+					<label for='input__date_from'>{{ trans('user/table.date_from') }}</label>
+					<input type='date' class='form-control' id='input__date_from' name='date'>
 				</div>
 
 				<div class='form-group'>
@@ -18,7 +18,7 @@
 							<div class='row'>
 								<label for='input__from_h' class='col-xs-6 label__padding-top_6'>{{ trans('user/table.from_h') }}</label>
 								<div class='col-xs-6'>
-									<select class='form-control' id='input__from_h'>
+									<select class='form-control' id='input__from_h' name='from_h'>
 										<option>00</option>
 										<option>01</option>
 										<option>02</option>
@@ -51,7 +51,7 @@
 							<div class='row'>
 								<label for='input__from_m' class='col-xs-6 label__padding-top_6'>{{ trans('user/table.from_m') }}</label>
 								<div class='col-xs-6'>
-									<select class='form-control' id='input__from_m'>
+									<select class='form-control' id='input__from_m' name='from_m'>
 										<option>00</option>
 										<option>05</option>
 										<option>10</option>
@@ -72,13 +72,18 @@
 				</div>
 
 				<div class='form-group'>
+					<label for='input__date_to'>{{ trans('user/table.date_to') }}</label>
+					<input type='date' class='form-control' id='input__date_to' name='date'>
+				</div>
+
+				<div class='form-group'>
 					<label>{{ trans('user/table.to') }}</label>
 					<div class='row'>
 						<div class='col-xs-6'>
 							<div class='row'>
 								<label for='input__to_h' class='col-xs-6 label__padding-top_6'>{{ trans('user/table.to_h') }}</label>
 								<div class='col-xs-6'>
-									<select class='form-control' id='input__to_h'>
+									<select class='form-control' id='input__to_h' name='to_h'>
 										<option>00</option>
 										<option>01</option>
 										<option>02</option>
@@ -111,7 +116,7 @@
 							<div class='row'>
 								<label for='input__to_m' class='col-xs-6 label__padding-top_6'>{{ trans('user/table.to_m') }}</label>
 								<div class='col-xs-6'>
-									<select class='form-control' id='input__to_m'>
+									<select class='form-control' id='input__to_m' name='to_m'>
 										<option>00</option>
 										<option>05</option>
 										<option>10</option>
@@ -133,7 +138,7 @@
 
 				<div class='form-group'>
 					<label for='input__table'>{{ trans('user/table.table') }}</label>
-					<select class='form-control' id='input__table'>
+					<select class='form-control' id='input__table' name='table'>
 						<option>1</option>
 						<option>2</option>
 						<option>3</option>
@@ -147,12 +152,12 @@
 
 				<div class='form-group'>
 					<label for='input__name'>{{ trans('user/table.name') }}</label>
-					<input type='text' class='form-control' id='input__name'>
+					<input type='text' class='form-control' id='input__name' name='info'>
 				</div>
 
 				<div class='form-group'>
 					<label for='input__tel'>{{ trans('user/table.tel') }}</label>
-					<input type='text' class='form-control' id='input__tel'>
+					<input type='text' class='form-control' id='input__tel' name='phone'>
 				</div>
 
 				<div class='form-group'>
@@ -165,9 +170,54 @@
 		</div>
 	</div>
 
+	{{ csrf_field() }}
 	<script>
 		$(function(){
-			$('#input__date').datepicker($.datepicker.regional[ "{{ \App::getLocale() }}" ]).datepicker('option', 'dateFormat', 'dd.mm.yy');
+			$('#form').submit(function(e){
+				if (
+					$('#input__date_from').val().length == 0
+					|| $('#input__date_to').val().length == 0
+					) {
+					alert('заполните поля c датами');
+					e.preventDefault();
+					return;
+				}
+				dateFrom = getDate( $('#input__date_from').val() );
+				dateTo = getDate( $('#input__date_to').val() );
+				dateFrom.setHours( $('#input__from_h').val() );
+				dateFrom.setMinutes( $('#input__from_m').val() );
+				dateTo.setHours( $('#input__to_h').val() );
+				dateTo.setMinutes( $('#input__to_m').val() );
+
+				if ( dateFrom >= dateTo ) {
+					alert('датавремя начала должна быть меньше датавремени конца');
+					e.preventDefault();
+					return;
+				}
+
+				$.ajax({
+					type: 'post',
+					cache: false,
+					headers: { 'X-CSRF-TOKEN' : $('input[name="_token"').val() },
+					url: '/ajax/table',
+					data: $(this).serialize(),
+					success: function(data) {
+						alert(data);
+					}
+				});
+				e.preventDefault();
+			});
+
+			$('input[type=date]').datepicker($.datepicker.regional[ "{{ \App::getLocale() }}" ]).datepicker('option', 'dateFormat', 'dd.mm.yy');
 		});
+
+		function getDate(val)
+		{
+			year = parseInt(val.match(/\d\d\d\d/)[0]);
+			month = parseInt(val.match(/\.(\d\d)\./)[1]);
+			day = parseInt(val.match(/\d\d\./)[0]);
+			date = new Date(year, month-1, day);
+			return date;
+		}
 	</script>
 @endsection

@@ -24,12 +24,8 @@
 								<li {{ Request::is('admin/network') ? "class=active" : "" }}><a href='/admin/network'>Сеть ресторанов</a></li>
 								<li {{ Request::is('admin/guestbook') ? "class=active" : "" }}><a href='/admin/guestbook'>Отзывы</a></li>
 								<li {{ Request::is('admin/menu') ? "class=active" : "" }}><a href='/admin/menu'>Меню</a></li>
-								
+								<li {{ Request::is('admin/table') ? "class=active" : "" }}><a href='/admin/table'>Заказы столиков</a></li>
 								<li {{ Request::is('admin/event') ? "class=active" : "" }}><a href='/admin/event'>Мероприятия</a></li>
-								<!-- <li><a href="/">На основной сайт</a></li> -->
-								<!-- <li {{ Request::is('/admin/hits') ? ' class=active' : '' }}><a href="/admin/hits">Статистика посещений</a></li>
-								<li {{ Request::is('/admin/guestbook') ? ' class=active' : '' }}><a href="/admin/guestbook">Гостевая книга</a></li>
-								<li {{ Request::is('/admin/blog') ? ' class=active' : '' }}><a href="/admin/blog">Блог</a></li> -->
 							</ul>
 							<p class="navbar-text navbar-right">{{ Auth::user()->name }} <a href='/admin/logout'>Выйти</a></p>
 						</div>

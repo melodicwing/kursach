@@ -8,6 +8,7 @@ use \App\Restauraunt;
 use \App\Dish;
 use \App\Event;
 use \App\Comment;
+use \App\Table;
 
 class Admin extends Controller
 {
@@ -161,5 +162,11 @@ class Admin extends Controller
 		}
 		$comments = Comment::paginate(9);
 		return view('admin/guestbook', [ 'comments' => $comments ]);
+	}
+
+	function table($event)
+	{
+		$tables = Table::all();
+		return view('admin/table', [ 'tables' => $tables ]);
 	}
 }

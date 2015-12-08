@@ -25,10 +25,6 @@ Route::get('welcome', function () {
     return view('welcome');
 });
 
-Route::group(['prefix' => 'ajax'] ,function(){
-	Route::post('/event', 'Ajax@event');
-});
-
 // Route::get('/', 'User@index')->name('home');
 // 	Route::get('/news', 'User@news')->name('news');
 // 	Route::group(['prefix' => 'about', 'as' => 'about/'], function(){
@@ -104,7 +100,14 @@ Route::group(['prefix' => 'admin'], function(){
 		Route::get('/event/{event}', 'Admin@event_detail');
 
 		Route::get('/guestbook', 'Admin@guestbook');
+
+		Route::get('/table', 'Admin@table');
 	});
+});
+
+Route::group(['prefix' => 'ajax'] ,function(){
+	Route::post('/event', 'Ajax@event');
+	Route::post('/table', 'Ajax@table');
 });
 
 // $locale_pattern = implode('|', $locales);
