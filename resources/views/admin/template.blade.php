@@ -26,6 +26,7 @@
 								<li {{ Request::is('admin/menu') ? "class=active" : "" }}><a href='/admin/menu'>Меню</a></li>
 								<li {{ Request::is('admin/table') ? "class=active" : "" }}><a href='/admin/table'>Заказы столиков</a></li>
 								<li {{ Request::is('admin/event') ? "class=active" : "" }}><a href='/admin/event'>Мероприятия</a></li>
+								<li {{ Request::is('admin/test') ? "class=active" : "" }}><a href='/admin/test'>Редактирование содержания страницы</a></li>
 							</ul>
 							<p class="navbar-text navbar-right">{{ Auth::user()->name }} <a href='/admin/logout'>Выйти</a></p>
 						</div>

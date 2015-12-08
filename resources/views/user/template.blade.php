@@ -52,6 +52,7 @@
 							</li>
 							<li><a href="{{link_loc()}}/map">{{ trans('user/template.map') }}</a></li>
 							<li><a href="{{link_loc()}}/sitemap">{{ trans('user/template.sitemap') }}</a></li>
+							<li><a href="{{link_loc()}}/test">{{ trans('user/template.test') }}</a></li>
 						</ul>
 				    </div>
 				  </div>

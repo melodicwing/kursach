@@ -41,9 +41,9 @@ foreach ($locales as $item) {
 		$lang = $item;
 	}
 
-	Route::get("$lang/test", function(){
-		return config('app.locale');
-	})->name("$lang/test");
+	// Route::get("$lang/test", function(){
+	// 	return config('app.locale');
+	// })->name("$lang/test");
 
 	Route::group(['prefix' => $item, 'as' => $lang], function(){
 		Route::get('/', 'User@index')->name('home');
@@ -67,6 +67,7 @@ foreach ($locales as $item) {
 			Route::get('/event', 'User@event')->name('event');
 			Route::get('/map', 'User@map')->name('map');
 			Route::get('/sitemap', 'User@sitemap')->name('sitemap');
+			Route::get('/test', 'User@test')->name('test');
 	});
 }
 
@@ -104,6 +105,9 @@ Route::group(['prefix' => 'admin'], function(){
 		Route::get('/table/', 'Admin@table');
 		Route::model('table', 'App\Table');
 		Route::get('/table/{table}', 'Admin@table_detail');
+		
+		Route::get('/test', 'Admin@test');
+		Route::post('/test', 'Admin@test');
 	});
 });
 

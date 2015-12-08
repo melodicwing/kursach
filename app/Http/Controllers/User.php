@@ -118,4 +118,9 @@ class User extends Controller
 	{
 		return view('user/sitemap');
 	}
+
+	function test()
+	{
+		return view('user/test');
+	}
 }

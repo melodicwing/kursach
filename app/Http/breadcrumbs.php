@@ -102,6 +102,12 @@ foreach ($locales as $item) {
 		$breadcrumbs->parent($lang.'home');
 		$breadcrumbs->push(trans('user/template.sitemap'), route($lang.'sitemap'));
 	});
+
+	//Тест
+	Breadcrumbs::register($lang.'test', function($breadcrumbs) use ($lang){
+		$breadcrumbs->parent($lang.'home');
+		$breadcrumbs->push(trans('user/template.test'), route($lang.'test'));
+	});
 }
 
 // //Главная
