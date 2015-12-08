@@ -22,6 +22,7 @@
 							<ul class="nav navbar-nav">
 								<li {{ Request::is('admin/news') ? "class=active" : "" }}><a href='/admin/news'>Новости</a></li>
 								<li {{ Request::is('admin/network') ? "class=active" : "" }}><a href='/admin/network'>Сеть ресторанов</a></li>
+								<li {{ Request::is('admin/guestbook') ? "class=active" : "" }}><a href='/admin/guestbook'>Отзывы</a></li>
 								<li {{ Request::is('admin/menu') ? "class=active" : "" }}><a href='/admin/menu'>Меню</a></li>
 								
 								<li {{ Request::is('admin/event') ? "class=active" : "" }}><a href='/admin/event'>Мероприятия</a></li>

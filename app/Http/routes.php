@@ -64,6 +64,7 @@ foreach ($locales as $item) {
 				Route::get('/rewards', 'User@about_rewards')->name('rewards');
 				Route::get('/staff', 'User@about_staff')->name('staff');
 				Route::get('/guestbook', 'User@about_guestbook')->name('guestbook');
+				Route::post('/guestbook', 'User@about_guestbook');
 			});
 			Route::get('/menu', 'User@menu')->name('menu');
 			Route::get('/table', 'User@table')->name('table');
@@ -101,6 +102,8 @@ Route::group(['prefix' => 'admin'], function(){
 		});
 		Route::get('/event/', 'Admin@event');
 		Route::get('/event/{event}', 'Admin@event_detail');
+
+		Route::get('/guestbook', 'Admin@guestbook');
 	});
 });
 

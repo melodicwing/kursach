@@ -5,14 +5,15 @@
 @section('content')
 	<div class='row'>
 		<div class='col-sm-offset-3 col-xs-12 col-sm-6'>
-			<form>
+			<form method='post' action='/about/guestbook' onsubmit='parseMessage()'>
+				{{ csrf_field() }}
 				<div class='form-group'>
 					<label for='inputName'>{{ trans('user/about/guestbook.name') }}</label>
-					<input id='inputName' type='text' class='form-control'>
+					<input id='inputName' name='name' type='text' class='form-control'>
 				</div>
 				<div class='form-group'>
 					<label for='inputText'>{{ trans('user/about/guestbook.msg') }}</label>
-					<textarea id='inputText' class='form-control' rows=5></textarea>
+					<textarea id='inputText' name='message' class='form-control' rows=5 data-provide='markdown'></textarea>
 				</div>
 				<div class='form-group'>
 					<input id='inputSubmit' type='submit' class='form-control my__form' value='{{ trans('user/about/guestbook.submit') }}'>
@@ -25,6 +26,44 @@
 		<div class='col-xs-12 spacer'>
 		</div>
 	</div>
+
+	@if($comments->count())
+		<div class='row'>
+			<?php $i = 0 ?>
+			@foreach($comments as $item)
+				@unless($i%3)
+					<div class='clearfix'></div>
+				@endunless
+				<?php $i++ ?>
+				<div class='col-sm-4'>
+					<h4 class='about__network__header__block'>{{ $item->name }}, {{ date('d.m.Y', strtotime($item->created_at)) }}</h4>
+
+					<div class='guestbook__frame'>
+						{!! $item->message !!}
+					</div>
+
+					<div class='hidden-xs spacer10'>
+						&nbsp
+					</div>
+				</div>
+				<div class='visible-xs-block spacer10'>
+					&nbsp
+				</div>
+			@endforeach
+		</div>
+		<div class='row'>
+			<div class='col-xs-12 text-center'>
+				{!! $comments->render() !!}
+			</div>
+		</div>
+	@else
+		<div class='row'>
+			<div class='col-xs-12 text-center'>
+				<p>{{ trans('user/about/guestbook.no_items') }}</p>
+			</div>
+		</div>
+	@endif
+
 	<div class='row'>
 		<div class='col-sm-4'>
 			<h4 class='about__network__header__block'>Брюс Уэйн, 15.11.2015</h4>
@@ -110,4 +149,15 @@
 			</div>
 		</div>
 	</div>
+
+	<script>
+		function parseMessage()
+		{
+			$('#inputText').data('markdown').setContent(
+				$('#inputText').data('markdown').parseContent()
+			);
+
+			return false;
+		}
+	</script>
 @endsection

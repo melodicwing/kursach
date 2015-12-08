@@ -7,6 +7,7 @@ use \App\News;
 use \App\Restauraunt;
 use \App\Dish;
 use \App\Event;
+use \App\Comment;
 
 class Admin extends Controller
 {
@@ -144,5 +145,21 @@ class Admin extends Controller
 	function event_detail($event)
 	{
 		return view('admin/event_detail', [ 'event' => $event ]);
+	}
+
+	function guestbook(Request $request)
+	{
+		$item = Comment::find($request->input('approve'));
+		if ( $item ) {
+			$item->approved = true;
+			$item->save();
+		}
+		$item = Comment::find($request->input('disapprove'));
+		if ( $item ) {
+			$item->approved = false;
+			$item->save();
+		}
+		$comments = Comment::paginate(9);
+		return view('admin/guestbook', [ 'comments' => $comments ]);
 	}
 }

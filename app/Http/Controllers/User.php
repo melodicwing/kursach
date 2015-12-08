@@ -2,9 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Http\Request;
 use App\News;
 use \App\Restauraunt;
 use App\Dish;
+use App\Comment;
 
 class User extends Controller
 {
@@ -61,9 +63,13 @@ class User extends Controller
 			return view('user/about/staff');
 		}
 
-		function about_guestbook()
+		function about_guestbook(Request $request)
 		{
-			return view('user/about/guestbook');
+			if ($request->isMethod('POST')) {
+				Comment::create($request->all());
+			}
+			$comments = Comment::where('approved', 't')->paginate(9);
+			return view('user/about/guestbook', [ 'comments' => $comments ]);
 		}
 
 	function menu()
