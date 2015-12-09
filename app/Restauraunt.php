@@ -18,6 +18,7 @@ class Restauraunt extends Model
 			if ($file->isValid()) {
 				$originalName = $file->getClientOriginalName();
 				$fullPath = '/'.Restauraunt::$path.$originalName;
+				// dd(\File::directories('assets/img'));
 				$file->move(Restauraunt::$path, $originalName);
 			}
 		}
